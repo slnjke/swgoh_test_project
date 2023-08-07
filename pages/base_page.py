@@ -46,3 +46,6 @@ class BasePage:
         result_after_filtering = list(filter(lambda x: f'{filter_name}' in x, filtered_chars))
         ans = 1 if result_of_searching == len(result_after_filtering) else 0
         return ans
+
+    def wait_for_timeout(self):
+        self.driver.implicitly_wait(10)

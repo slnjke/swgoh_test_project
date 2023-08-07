@@ -29,6 +29,6 @@ def category_filter(driver):
         return list_of_available_filters
 
 
-def pytest_generate_tests(metafunc):
-    if "category_filter" in metafunc.fixturenames:
-        metafunc.parametrize("category_filter", category_filter[0:])
+# def pytest_generate_tests(metafunc):
+#     if "category_filter" in metafunc.fixturenames:
+#         metafunc.parametrize("category_filter")
