@@ -7,10 +7,11 @@ import pytest
 def driver():
     chrome_driver = webdriver.Chrome()
     chrome_driver.maximize_window()
+    chrome_driver.implicitly_wait(5)
     yield chrome_driver
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def category_filter(driver):
     driver.get('https://swgoh.gg/')
     filter_button = driver.find_element(By.CSS_SELECTOR, "[data-target= '#filterModal']")
@@ -29,6 +30,19 @@ def category_filter(driver):
         return list_of_available_filters
 
 
-# def pytest_generate_tests(metafunc):
-#     if "category_filter" in metafunc.fixturenames:
-#         metafunc.parametrize("category_filter")
+@pytest.fixture(scope='class')
+def alignment_filter(driver):
+    driver.get('https://swgoh.gg/')
+    filter_button = driver.find_element(By.CSS_SELECTOR, "[data-target= '#filterModal']")
+    filter_button.click()
+    alignment_button = driver.find_element(By.XPATH, "//a[text()='Alignments']")
+    alignment_button.click()
+    result = driver.find_elements(By.XPATH, "//div[@class='modal-body p-a-0 alignments']"
+                                            "/div[@class='modal-body-scroller']"
+                                            "/div[@class='media-list media-list-users list-group']")
+    list_of_available_filters = list()
+    for element in result:
+        list_of_available_filters = element.text.split("\n")
+        return list_of_available_filters
+
+
