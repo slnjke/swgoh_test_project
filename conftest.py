@@ -7,7 +7,7 @@ import pytest
 def driver():
     chrome_driver = webdriver.Chrome()
     chrome_driver.maximize_window()
-    chrome_driver.implicitly_wait(5)
+    chrome_driver.implicitly_wait(4)
     yield chrome_driver
 
 

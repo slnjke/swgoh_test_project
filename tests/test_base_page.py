@@ -1,7 +1,10 @@
 from pages.searching_page import SearchPage
 from pages.locators import search_page_locators as loc
+import allure
 
 
+@allure.feature('Filtering Characters')
+@allure.story('Filtering by category')
 class TestFilterCharactersByCategory:
     def test_filter_characters_501(self, driver, category_filter):
         search_page = SearchPage(driver)
@@ -279,6 +282,8 @@ class TestFilterCharactersByCategory:
         assert search_page.check_filtered_characters_is_valid(category_filter[38]) == 1
 
 
+@allure.feature('Filtering Characters')
+@allure.story('Filtering by alignment')
 class TestFilterCharactersByAlignment:
     def test_filter_characters_light_side(self, driver, alignment_filter):
         search_page = SearchPage(driver)
