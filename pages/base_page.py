@@ -1,4 +1,5 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
+import allure
 
 
 class BasePage:
@@ -9,12 +10,13 @@ class BasePage:
         self.driver = driver
 
     def open_page(self):
-        if self.page_url:
-            self.driver.get(f'{self.base_url}{self.page_url}')
-        elif self.base_url:
-            self.driver.get(f'{self.base_url}')
-        else:
-            raise NotImplementedError('Page cannot be opened by URL')
+        with allure.step('Открываем страницу'):
+            if self.page_url:
+                self.driver.get(f'{self.base_url}{self.page_url}')
+            elif self.base_url:
+                self.driver.get(f'{self.base_url}')
+            else:
+                raise NotImplementedError('Page cannot be opened by URL')
 
     def find(self, locator):
         return self.driver.find_element(*locator)

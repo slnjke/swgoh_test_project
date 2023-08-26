@@ -46,3 +46,18 @@ def alignment_filter(driver):
         return list_of_available_filters
 
 
+@pytest.fixture(scope='class')
+def ability_classes_filter(driver):
+    driver.get('https://swgoh.gg/')
+    filter_button = driver.find_element(By.CSS_SELECTOR, "[data-target= '#filterModal']")
+    filter_button.click()
+    alignment_button = driver.find_element(By.XPATH, "//a[text()='Alignments']")
+    alignment_button.click()
+    result = driver.find_elements(By.XPATH, "//div[@class='modal-body p-a-0 abilities']"
+                                            "/div[@class='modal-body-scroller']"
+                                            "/div[@class='media-list media-list-users list-group']")
+    list_of_available_filters = list()
+    for element in result:
+        list_of_available_filters = element.text.split("\n")
+        return list_of_available_filters
+
