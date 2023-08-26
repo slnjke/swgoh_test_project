@@ -31,9 +31,7 @@ class TestFilterCharactersByCategory:
         search_page = SearchPage(driver)
         search_page.open_page()
         search_page.click_filters_button()
-        driver.implicitly_wait(25)
         search_page.click_on_a_specific_filter(loc.filter_loc_Bounty_Hunter)
-        driver.implicitly_wait(25)
         assert search_page.check_filtered_characters_is_valid(category_filter[3]) == 1
 
     def test_filter_characters_clone_trooper(self, driver, category_filter):
@@ -308,3 +306,13 @@ class TestFilterCharactersByAlignment:
         search_page.click_on_a_specific_filter(loc.alignments_button_filter_loc)
         search_page.click_on_a_specific_filter(loc.filter_loc_Neutral)
         assert search_page.check_filtered_characters_is_valid(alignment_filter[2]) == 1
+
+
+@allure.feature('Filtering Characters')
+@allure.story('Filtering by Ability Classes')
+class TestFilterCharactersByAbilityClasses:
+    def test_filter_characters_ability_block(self, driver, ability_classes_filter):
+        search_page = SearchPage(driver)
+        search_page.open_page()
+        search_page.click_filters_button()
+        search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)
