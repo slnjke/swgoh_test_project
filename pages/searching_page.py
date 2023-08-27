@@ -14,7 +14,7 @@ class SearchPage(BasePage):
             self.find(loc.filter_button_loc).click()
 
     def click_on_a_specific_filter(self, locator):
-        with allure.step(f"Выбираем фильтр {locator}"):
+        with allure.step(f"Выбираем фильтр {locator[1].strip('//strong[text()=]a[text()=')}"):
             self.find(locator).click()
 
     def check_filtered_characters_is_valid(self, filter_name):
