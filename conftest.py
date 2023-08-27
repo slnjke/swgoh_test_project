@@ -57,4 +57,3 @@ def ability_classes_filter(driver):
     for element in result:
         list_of_available_filters = element.text.split("\n")
         return list_of_available_filters
-
