@@ -19,7 +19,6 @@ def category_filter(driver):
     result = driver.find_elements(By.XPATH, "//div[@class='modal-body p-a-0 categories']"
                                             "/div[@class='modal-body-scroller']"
                                             "/div[@class='media-list media-list-users list-group']")
-    list_of_available_filters = list()
     unused = [' Affiliation', ' Role', ' None', ' Species', ' Profession']
     excluded_filters = ['Cargo Ship Ship', 'Event Only', 'Capital Ship', '212th']
     for element in result:
@@ -40,7 +39,6 @@ def alignment_filter(driver):
     result = driver.find_elements(By.XPATH, "//div[@class='modal-body p-a-0 alignments']"
                                             "/div[@class='modal-body-scroller']"
                                             "/div[@class='media-list media-list-users list-group']")
-    list_of_available_filters = list()
     for element in result:
         list_of_available_filters = element.text.split("\n")
         return list_of_available_filters
@@ -56,7 +54,6 @@ def ability_classes_filter(driver):
     result = driver.find_elements(By.XPATH, "//div[@class='modal-body p-a-0 abilities']"
                                             "/div[@class='modal-body-scroller']"
                                             "/div[@class='media-list media-list-users list-group']")
-    list_of_available_filters = list()
     for element in result:
         list_of_available_filters = element.text.split("\n")
         return list_of_available_filters
