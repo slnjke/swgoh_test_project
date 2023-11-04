@@ -46,6 +46,7 @@ def alignment_filter(driver):
 
 @pytest.fixture(scope='class')
 def ability_classes_filter(driver):
+    list_of_available_filters = list()
     driver.get('https://swgoh.gg/')
     filter_button = driver.find_element(By.CSS_SELECTOR, "[data-target= '#filterModal']")
     filter_button.click()
@@ -55,5 +56,5 @@ def ability_classes_filter(driver):
                                             "/div[@class='modal-body-scroller']"
                                             "/div[@class='media-list media-list-users list-group']")
     for element in result:
-        list_of_available_filters = element.text.split("\n")
+        list_of_available_filters.append(element.text)
         return list_of_available_filters

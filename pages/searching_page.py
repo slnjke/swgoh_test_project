@@ -30,5 +30,3 @@ class SearchPage(BasePage):
                 raise AssertionError(f'One or more characters does not have tag: {filter_name}')
             else:
                 return ans
-
-    # def get_list_of_filtered_characters(self):

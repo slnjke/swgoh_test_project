@@ -29,3 +29,6 @@ class BasePage:
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         else:
             self.driver.execute_script(f"window.scrollTo(0, {pix});")
+
+    def return_to_previous_page(self):
+        return self.driver.back()
