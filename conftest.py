@@ -7,7 +7,7 @@ import pytest
 def driver():
     chrome_driver = webdriver.Chrome()
     chrome_driver.maximize_window()
-    chrome_driver.implicitly_wait(4)
+    chrome_driver.implicitly_wait(6)
     yield chrome_driver
 
 
@@ -50,11 +50,12 @@ def ability_classes_filter(driver):
     driver.get('https://swgoh.gg/')
     filter_button = driver.find_element(By.CSS_SELECTOR, "[data-target= '#filterModal']")
     filter_button.click()
-    alignment_button = driver.find_element(By.XPATH, "//a[text()='Alignments']")
+    alignment_button = driver.find_element(By.XPATH, "//a[text()='Ability Classes']")
     alignment_button.click()
     result = driver.find_elements(By.XPATH, "//div[@class='modal-body p-a-0 abilities']"
                                             "/div[@class='modal-body-scroller']"
-                                            "/div[@class='media-list media-list-users list-group']")
+                                            "/div[@class='media-list media-list-users list-group']"
+                                            "/a[@class='list-group-item'] ")
     for element in result:
         list_of_available_filters.append(element.text)
         return list_of_available_filters

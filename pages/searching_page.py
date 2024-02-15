@@ -1,5 +1,8 @@
 from pages.base_page import BasePage
 from pages.locators import search_page_locators as loc
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import allure
 
 
@@ -30,3 +33,23 @@ class SearchPage(BasePage):
                 raise AssertionError(f'One or more characters does not have tag: {filter_name}')
             else:
                 return ans
+
+    def check_that_filtered_characters_is_valid(self, filter_name):
+        with allure.step("Проверяем, что отфильтрованные персонажи валидны"):
+            for i in range(len(filter_name)):
+                self.driver.find_element(By.XPATH, f"//strong[text()='{filter_name}']").click()
+                filtered_chars = self.driver.find_elements(By.XPATH,
+                                                           "//li[@class='media list-group-item p-0 character']")
+                original_tab = self.driver.current_window_handle
+                for n in range(len(filtered_chars)):
+                    actions = ActionChains(self.driver)
+                    self.driver.execute_script("arguments[0].scrollIntoView();", filtered_chars[n])
+                    actions.key_down(Keys.CONTROL).click(filtered_chars[n])
+                    actions.perform()
+                    all_tabs = self.driver.window_handles
+                    for w in all_tabs:
+                        if w != original_tab:
+                            self.driver.switch_to.window(w)
+                    self.driver.find_element(By.XPATH, f"//a[text()[contains(.,'{filter_name}')]]")
+                    self.driver.close()
+                    self.driver.switch_to.window(original_tab)
