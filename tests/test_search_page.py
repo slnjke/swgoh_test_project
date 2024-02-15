@@ -316,3 +316,4 @@ class TestFilterCharactersByAbilityClasses:
         search_page.open_page()
         search_page.click_filters_button()
         search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)
+        search_page.check_that_filtered_characters_is_valid(ability_classes_filter[0])

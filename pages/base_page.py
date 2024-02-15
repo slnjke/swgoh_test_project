@@ -30,5 +30,9 @@ class BasePage:
         else:
             self.driver.execute_script(f"window.scrollTo(0, {pix});")
 
+    def scroll_to_view(self, locator):
+        with allure.step('Скроллим до нужного элемента на странице'):
+            self.driver.execute_script("arguments[0].scrollIntoView();", locator)
+
     def return_to_previous_page(self):
         return self.driver.back()
