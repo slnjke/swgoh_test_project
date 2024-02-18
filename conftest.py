@@ -9,6 +9,7 @@ def driver():
     chrome_driver.maximize_window()
     chrome_driver.implicitly_wait(6)
     yield chrome_driver
+    chrome_driver.quit()
 
 
 @pytest.fixture(scope='class')
