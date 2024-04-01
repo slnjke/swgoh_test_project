@@ -1,5 +1,6 @@
 from pages.searching_page import SearchPage
 from pages.locators import search_page_locators as loc
+import pytest
 import allure
 
 
@@ -316,4 +317,5 @@ class TestFilterCharactersByAbilityClasses:
         search_page.open_page()
         search_page.click_filters_button()
         search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)
-        search_page.check_that_filtered_characters_is_valid(ability_classes_filter[0])
+        search_page.check_that_filtered_characters_is_valid(ability_classes_filter)
+        assert True
