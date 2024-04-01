@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from time import sleep
 import pytest
 
 
@@ -49,14 +50,12 @@ def alignment_filter(driver):
 def ability_classes_filter(driver):
     list_of_available_filters = list()
     driver.get('https://swgoh.gg/')
-    filter_button = driver.find_element(By.CSS_SELECTOR, "[data-target= '#filterModal']")
-    filter_button.click()
-    alignment_button = driver.find_element(By.XPATH, "//a[text()='Ability Classes']")
-    alignment_button.click()
+    driver.find_element(By.CSS_SELECTOR, "[data-target= '#filterModal']").click()
+    driver.find_element(By.XPATH, "//a[text()='Ability Classes']").click()
     result = driver.find_elements(By.XPATH, "//div[@class='modal-body p-a-0 abilities']"
                                             "/div[@class='modal-body-scroller']"
                                             "/div[@class='media-list media-list-users list-group']"
-                                            "/a[@class='list-group-item'] ")
+                                            "/a[@class='list-group-item']")
     for element in result:
         list_of_available_filters.append(element.text)
-        return list_of_available_filters
+    return list_of_available_filters
