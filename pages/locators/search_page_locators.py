@@ -1,6 +1,10 @@
 from selenium.webdriver.common.by import By
 
-
+accept_all_cookies_btn_loc = (By.XPATH, "//span[text()='Accept All']")
+cookies_frame_loc = (By.XPATH, "//iframe[@class='faktor-iframe-wrapper']")
+#
+#
+#
 filter_button_loc = (By.XPATH, "//button[@class='btn btn-default']")
 filter_list_loc = (By.XPATH, "//div[@class='modal-body p-a-0 categories']/div[@class='modal-body-scroller']"
                              "/div[@class='media-list media-list-users list-group']")
@@ -24,6 +28,7 @@ filter_loc_Fleet_Commander = (By.XPATH, "//strong[text()='Fleet Commander']")
 filter_loc_Galactic_Legend = (By.XPATH, "//strong[text()='Galactic Legend']")
 filter_loc_Galactic_Republic = (By.XPATH, "//strong[text()='Galactic Republic']")
 filter_loc_Geonosian = (By.XPATH, "//strong[text()='Geonosian']")
+filter_loc_Gungan = (By.XPATH, "//strong[text()='Gungan']")
 filter_loc_Healer = (By.XPATH, "//strong[text()='Healer']")
 filter_loc_Hutt_Cartel = (By.XPATH, "//strong[text()='Hutt Cartel']")
 filter_loc_Imperial_Remnant = (By.XPATH, "//strong[text()='Imperial Remnant']")

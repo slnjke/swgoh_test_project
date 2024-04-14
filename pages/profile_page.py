@@ -1,4 +1,4 @@
-from pages.search_page import BasePage
+from pages.base_page import BasePage
 
 
 class ProfilePage(BasePage):

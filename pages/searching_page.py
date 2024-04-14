@@ -29,6 +29,8 @@ class SearchPage(BasePage):
                 filtered_chars.append(i.text)
             result_of_searching = len(filtered_chars)
             result_after_filtering = list(filter(lambda x: f'{filter_name}' in x, filtered_chars))
+            print("result_of_searching="f'{result_of_searching}')
+            print("result_after_filtering="f'{len(result_after_filtering)}')
             ans = 1 if result_of_searching == len(result_after_filtering) else 0
             if ans == 0:
                 raise AssertionError(f'One or more characters does not have tag: {filter_name}')
@@ -37,22 +39,21 @@ class SearchPage(BasePage):
 
     def check_that_filtered_characters_is_valid(self, filter_name):
         with allure.step("Проверяем, что отфильтрованные персонажи валидны"):
-            for i in range(len(filter_name)):
-                with allure.step(f"Проверяем фильтр {filter_name[i]}"):
-                    self.driver.find_element(By.XPATH, f"//strong[text()='{filter_name[i]}']").click()
-                    filtered_chars = self.driver.find_elements(By.XPATH,
-                                                               "//li[@class='media list-group-item p-0 character']")
-                    original_tab = self.driver.current_window_handle
-                    for n in range(len(filtered_chars)):
-                        actions = ActionChains(self.driver)
-                        self.driver.execute_script("arguments[0].scrollIntoView();", filtered_chars[n])
-                        actions.key_down(Keys.CONTROL).click(filtered_chars[n])
-                        actions.perform()
-                        all_tabs = self.driver.window_handles
-                        for w in all_tabs:
-                            if w != original_tab:
-                                self.driver.switch_to.window(w)
-                                sleep(0.5)
-                        self.driver.find_element(By.XPATH, f"//a[text()[contains(.,'{filter_name[i]}')]]")
-                        self.driver.close()
-                        self.driver.switch_to.window(original_tab)
+            with allure.step(f"Проверяем фильтр {filter_name}"):
+                self.driver.find_element(By.XPATH, f"//strong[text()='{filter_name}']").click()
+                filtered_chars = self.driver.find_elements(By.XPATH,
+                                                           "//li[@class='media list-group-item p-0 character']")
+                original_tab = self.driver.current_window_handle
+                for n in range(len(filtered_chars)):
+                    actions = ActionChains(self.driver)
+                    self.driver.execute_script("arguments[0].scrollIntoView();", filtered_chars[n])
+                    actions.key_down(Keys.CONTROL).click(filtered_chars[n])
+                    actions.perform()
+                    all_tabs = self.driver.window_handles
+                    for w in all_tabs:
+                        if w != original_tab:
+                            self.driver.switch_to.window(w)
+                            sleep(0.5)
+                    self.driver.find_element(By.XPATH, f"//a[text()[contains(.,'{filter_name}')]]")
+                    self.driver.close()
+                    self.driver.switch_to.window(original_tab)
