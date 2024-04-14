@@ -25,7 +25,7 @@ def driver():
 def accept_cookies(driver):
     driver.get('https://swgoh.gg/')
     try:
-        frame_present = WebDriverWait(driver, 10).until(
+        WebDriverWait(driver, 10).until(
             EC.frame_to_be_available_and_switch_to_it(loc.cookies_frame_loc))
 
         try:
@@ -40,7 +40,6 @@ def accept_cookies(driver):
 
     except TimeoutException:
         print("Frame with cookies did not appear.")
-    # Handle the absence of the frame here if needed
     yield
 
 
