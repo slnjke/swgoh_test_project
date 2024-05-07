@@ -12,10 +12,10 @@ import pytest
 @pytest.fixture(scope='session')
 def driver():
     options = Options()
-    # options.add_argument('--headless')
-    # options.add_argument('--no-sandbox')
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
     chrome_driver = webdriver.Chrome(options=options)
-    chrome_driver.maximize_window()
+    chrome_driver.set_window_size(2560, 1600)
     chrome_driver.implicitly_wait(6)
     yield chrome_driver
     chrome_driver.quit()
