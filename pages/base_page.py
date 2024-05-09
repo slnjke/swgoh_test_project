@@ -10,7 +10,7 @@ class BasePage:
         self.driver = driver
 
     def open_page(self):
-        with allure.step('Открываем страницу'):
+        with allure.step('Open Page'):
             if self.page_url:
                 self.driver.get(f'{self.base_url}{self.page_url}')
             elif self.base_url:
@@ -31,7 +31,7 @@ class BasePage:
             self.driver.execute_script(f"window.scrollTo(0, {pix});")
 
     def scroll_to_view(self, locator):
-        with allure.step('Скроллим до нужного элемента на странице'):
+        with allure.step('Scroll to chosen element on page '):
             self.driver.execute_script("arguments[0].scrollIntoView();", locator)
 
     def return_to_previous_page(self):
