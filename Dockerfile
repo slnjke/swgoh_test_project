@@ -1,4 +1,4 @@
-FROM python
+FROM python:3.9.0
 WORKDIR /swgoh_test_project/
 COPY . .
 RUN mkdir allure-results

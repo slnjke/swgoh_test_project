@@ -1,0 +1,32 @@
+name: Docker Build and run UI tests for swgoh.gg
+
+on: [ push ]
+
+jobs:
+  ui-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build the Docker image
+        run: docker build -t dockertests .
+
+      - name: Run tests in Docker container
+        run: docker run --rm dockertests
+
+      - name: Push Docker image to registry
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: my_docker_image:latest
+
+      - name: Generate Allure report
+        run: docker run --rm -v ${PWD}/allure-results:/app --workdir=/app allureframework/allure-docker-service allure generate --clean
+
+      - name: Serve Allure report
+        run: docker run --rm -v ${PWD}/allure-results:/app --workdir=/app -p 8080:8080 allureframework/allure-docker-service allure serve --host 0.0.0.0
