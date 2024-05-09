@@ -9,19 +9,19 @@ from pages.locators import search_page_locators as loc
 import pytest
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def driver():
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     chrome_driver = webdriver.Chrome(options=options)
-    chrome_driver.set_window_size(2560, 1600)
-    chrome_driver.implicitly_wait(6)
+    chrome_driver.set_window_size(1024, 780)
+    chrome_driver.implicitly_wait(10)
     yield chrome_driver
     chrome_driver.quit()
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="class")
 def accept_cookies(driver):
     driver.get('https://swgoh.gg/')
     try:
