@@ -25,13 +25,13 @@ jobs:
           push: true
           tags: my_docker_image:latest
 
-      - name: Generate Allure report
-        run: sudo docker-compose run dockertests /bin/sh -c "allure generate allure-results --clean -o allure-report"
+      - name: Copy Allure report from container to host
+        run: docker cp $(docker ps -aqf "name=dockertests"):/swgoh_test_project/allure-report .
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-            token: ${{ secrets.CI_TOKEN }}
-            branch: gh-pages
-            folder: allure-report
-            clean: true
+          token: ${{ secrets.CI_TOKEN }}
+          branch: gh-pages
+          folder: allure-report
+          clean: true
