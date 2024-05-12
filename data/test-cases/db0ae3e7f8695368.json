@@ -1,0 +1,223 @@
+{
+  "uid" : "db0ae3e7f8695368",
+  "name" : "test_filter_characters_rebel",
+  "fullName" : "tests.test_search_page.TestFilterCharactersByCategory#test_filter_characters_rebel",
+  "historyId" : "bf802dfd4452606713c174d2f357c203",
+  "time" : {
+    "start" : 1715533528500,
+    "stop" : 1715533531185,
+    "duration" : 2685
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: One or more characters does not have tag: Rebel",
+  "statusTrace" : "self = <test_search_page.TestFilterCharactersByCategory object at 0x7f6a1a575ee0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"6f3355f372ffc9a884ee8124b9d53929\")>\ncategory_filter = ['501st', 'Attacker', 'Bad Batch', 'Bounty Hunter', 'Clone Trooper', 'Droid', ...]\n\n    def test_filter_characters_rebel(self, driver, category_filter):\n        search_page = SearchPage(driver)\n        search_page.open_page()\n        search_page.click_filters_button()\n        search_page.click_on_a_specific_filter(loc.filter_loc_Rebel)\n>       assert search_page.check_filtered_characters_is_valid(category_filter[26]) == 1\n\ntests/test_search_page.py:196: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pages.searching_page.SearchPage object at 0x7f6a1a6bcec0>\nfilter_name = 'Rebel'\n\n    def check_filtered_characters_is_valid(self, filter_name):\n        with allure.step(\"Проверяем, что отфильтрованные персонажи валидны\"):\n            result_of_finding = self.find_all(loc.filtered_characters_loc)\n            filtered_chars = list()\n            for i in result_of_finding:\n                filtered_chars.append(i.text)\n            result_of_searching = len(filtered_chars)\n            result_after_filtering = list(filter(lambda x: f'{filter_name}' in x, filtered_chars))\n            print(\"result_of_searching=\"f'{result_of_searching}')\n            print(\"result_after_filtering=\"f'{len(result_after_filtering)}')\n            ans = 1 if result_of_searching == len(result_after_filtering) else 0\n            if ans == 0:\n>               raise AssertionError(f'One or more characters does not have tag: {filter_name}')\nE               AssertionError: One or more characters does not have tag: Rebel\n\npages/searching_page.py:36: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "driver",
+    "time" : {
+      "start" : 1715533468031,
+      "stop" : 1715533468502,
+      "duration" : 471
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "accept_cookies",
+    "time" : {
+      "start" : 1715533468503,
+      "stop" : 1715533481914,
+      "duration" : 13411
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "category_filter",
+    "time" : {
+      "start" : 1715533481915,
+      "stop" : 1715533482884,
+      "duration" : 969
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: One or more characters does not have tag: Rebel",
+    "statusTrace" : "self = <test_search_page.TestFilterCharactersByCategory object at 0x7f6a1a575ee0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"6f3355f372ffc9a884ee8124b9d53929\")>\ncategory_filter = ['501st', 'Attacker', 'Bad Batch', 'Bounty Hunter', 'Clone Trooper', 'Droid', ...]\n\n    def test_filter_characters_rebel(self, driver, category_filter):\n        search_page = SearchPage(driver)\n        search_page.open_page()\n        search_page.click_filters_button()\n        search_page.click_on_a_specific_filter(loc.filter_loc_Rebel)\n>       assert search_page.check_filtered_characters_is_valid(category_filter[26]) == 1\n\ntests/test_search_page.py:196: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pages.searching_page.SearchPage object at 0x7f6a1a6bcec0>\nfilter_name = 'Rebel'\n\n    def check_filtered_characters_is_valid(self, filter_name):\n        with allure.step(\"Проверяем, что отфильтрованные персонажи валидны\"):\n            result_of_finding = self.find_all(loc.filtered_characters_loc)\n            filtered_chars = list()\n            for i in result_of_finding:\n                filtered_chars.append(i.text)\n            result_of_searching = len(filtered_chars)\n            result_after_filtering = list(filter(lambda x: f'{filter_name}' in x, filtered_chars))\n            print(\"result_of_searching=\"f'{result_of_searching}')\n            print(\"result_after_filtering=\"f'{len(result_after_filtering)}')\n            ans = 1 if result_of_searching == len(result_after_filtering) else 0\n            if ans == 0:\n>               raise AssertionError(f'One or more characters does not have tag: {filter_name}')\nE               AssertionError: One or more characters does not have tag: Rebel\n\npages/searching_page.py:36: AssertionError",
+    "steps" : [ {
+      "name" : "Open Page",
+      "time" : {
+        "start" : 1715533528500,
+        "stop" : 1715533529089,
+        "duration" : 589
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Кликаем на кнопку выбора фильтров",
+      "time" : {
+        "start" : 1715533529090,
+        "stop" : 1715533529159,
+        "duration" : 69
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Выбираем фильтр 'Rebel'",
+      "time" : {
+        "start" : 1715533529159,
+        "stop" : 1715533529777,
+        "duration" : 618
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Проверяем, что отфильтрованные персонажи валидны",
+      "time" : {
+        "start" : 1715533529777,
+        "stop" : 1715533531185,
+        "duration" : 1408
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: One or more characters does not have tag: Rebel\n",
+      "statusTrace" : "  File \"/swgoh_test_project/pages/searching_page.py\", line 36, in check_filtered_characters_is_valid\n    raise AssertionError(f'One or more characters does not have tag: {filter_name}')\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "8591868fde4377a5",
+      "name" : "stdout",
+      "source" : "8591868fde4377a5.txt",
+      "type" : "text/plain",
+      "size" : 49
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1715533557235,
+      "stop" : 1715533557355,
+      "duration" : 120
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "accept_cookies::0",
+    "time" : {
+      "start" : 1715533557234,
+      "stop" : 1715533557234,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "Filtering by category"
+  }, {
+    "name" : "feature",
+    "value" : "Filtering Characters"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_search_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestFilterCharactersByCategory"
+  }, {
+    "name" : "host",
+    "value" : "9f8365e739d7"
+  }, {
+    "name" : "thread",
+    "value" : "1-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_search_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "db0ae3e7f8695368.json",
+  "parameterValues" : [ ]
+}
