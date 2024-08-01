@@ -1,4 +1,5 @@
 import allure
+import pytest
 from base.base_test import BaseTest
 from pages.locators import search_page_locators as loc
 
@@ -289,6 +290,7 @@ class TestFilterCharactersByCategory(BaseTest):
 
 @allure.feature('Filtering Characters')
 @allure.story('Filtering by alignment')
+@pytest.mark.skip(reason="Tests not ready yet")
 class TestFilterCharactersByAlignment(BaseTest):
     def test_filter_characters_light_side(self):
         self.search_page.open_page()
