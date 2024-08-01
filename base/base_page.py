@@ -74,4 +74,3 @@ class BasePage:
         all_tabs = self.driver.window_handles
         new_tab = next(tab for tab in all_tabs if tab != original_tab)
         self.driver.switch_to.window(new_tab)
-
