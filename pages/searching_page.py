@@ -1,59 +1,63 @@
-from pages.base_page import BasePage
+from base.base_page import BasePage
+from config.links import Links
+from selenium.common import NoSuchElementException
 from pages.locators import search_page_locators as loc
-from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from time import sleep
 import allure
 
 
 class SearchPage(BasePage):
-    base_url = 'https://swgoh.gg/'
-    page_url = None
+    PAGE_URL = Links.CHARACTERS_PAGE
     list_of_available_filters = None
     filtered_chars_result = None
 
     def click_filters_button(self):
-        with allure.step("Кликаем на кнопку выбора фильтров"):
-            self.find(loc.filter_button_loc).click()
+        with allure.step("Click on filters button"):
+            self.wait.until(EC.element_to_be_clickable(loc.filter_button_loc)).click()
 
     def click_on_a_specific_filter(self, locator):
-        with allure.step(f"Выбираем фильтр {locator[1].strip('//strong[text()=]a[text()=')}"):
-            self.find(locator).click()
+        with allure.step(f"Select filter {locator[1].strip('//a[normalize-space(text()) =]')}"):
+            self.wait.until(EC.element_to_be_clickable(locator)).click()
 
-    def check_filtered_characters_is_valid(self, filter_name):
-        with allure.step("Проверяем, что отфильтрованные персонажи валидны"):
-            result_of_finding = self.find_all(loc.filtered_characters_loc)
-            filtered_chars = list()
-            for i in result_of_finding:
-                filtered_chars.append(i.text)
-            result_of_searching = len(filtered_chars)
-            result_after_filtering = list(filter(lambda x: f'{filter_name}' in x, filtered_chars))
-            print("result_of_searching="f'{result_of_searching}')
-            print("result_after_filtering="f'{len(result_after_filtering)}')
-            ans = 1 if result_of_searching == len(result_after_filtering) else 0
-            if ans == 0:
-                raise AssertionError(f'One or more characters does not have tag: {filter_name}')
-            else:
-                return ans
+    def check_that_selected_filter_is_correct(self, locator):
+        filter_to_select = locator[1].strip('//a[normalize-space(text()) =]')
+        selected_filter = self.find(loc.selected_filter_loc).text
 
-    def check_that_filtered_characters_is_valid(self, filter_name):
-        with allure.step("Проверяем, что отфильтрованные персонажи валидны"):
-            with allure.step(f"Проверяем фильтр {filter_name}"):
-                self.driver.find_element(By.XPATH, f"//strong[text()='{filter_name}']").click()
-                filtered_chars = self.driver.find_elements(By.XPATH,
-                                                           "//li[@class='media list-group-item p-0 character']")
-                original_tab = self.driver.current_window_handle
-                for n in range(len(filtered_chars)):
-                    actions = ActionChains(self.driver)
-                    self.driver.execute_script("arguments[0].scrollIntoView();", filtered_chars[n])
-                    actions.key_down(Keys.CONTROL).click(filtered_chars[n])
-                    actions.perform()
-                    all_tabs = self.driver.window_handles
-                    for w in all_tabs:
-                        if w != original_tab:
-                            self.driver.switch_to.window(w)
-                            sleep(0.5)
-                    self.driver.find_element(By.XPATH, f"//a[text()[contains(.,'{filter_name}')]]")
+        return True if selected_filter in filter_to_select else False
+
+    def check_filtered_characters_is_valid(self, locator):
+        with allure.step(
+                f"Checking that filtered characters is valid for filter "
+                f"{locator[1].strip('//a[normalize-space(text()) =]')}"):
+
+            selected_filter = self.find(loc.selected_filter_loc).text
+            chars_filtered = self.find_all(loc.filtered_characters_loc)
+            filtered_chars_names = self.find_all(loc.names_of_filtered_chars_loc)
+            stats_of_filtered_chars = [element.text for element in chars_filtered]
+            names_of_filtered_chars = [element.text for element in filtered_chars_names]
+            dict_of_filters_chars = dict(zip(names_of_filtered_chars, stats_of_filtered_chars))
+            self.take_screenshot("Character page")
+
+            return True if all(selected_filter in val for val in dict_of_filters_chars.values()) else False
+
+    def check_that_filtered_characters_is_valid(self, locator):
+        with allure.step(
+                f"Checking that filtered characters is valid for filter "
+                f"{locator[1].strip('//a[normalize-space(text()) =]')}"):
+
+            chars_filtered = self.find_all(loc.filtered_characters_loc)
+            original_tab = self.driver.current_window_handle
+            for char in chars_filtered:
+                self.click_and_open_link_in_new_tab(char)
+                self.switch_to_new_tab(original_tab)
+                try:
+                    self.find(loc.selected_filter_loc)
+                except NoSuchElementException:
+                    self.take_screenshot("Character page")
+                    return False
+                else:
                     self.driver.close()
                     self.driver.switch_to.window(original_tab)
+        return True
