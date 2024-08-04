@@ -1,5 +1,8 @@
-accept_all_cookies_btn_loc = ("id", "cmpbntyestxt")
-cookies_frame_loc = ("id", "cmpbox")
+from selenium.webdriver.common.by import By
+
+shadow_host_loc = (By.ID, "cmpwrapper")
+accept_all_cookies_btn_loc = (By.ID, "cmpbntyestxt")
+cookies_frame_loc = (By.ID, "cmpbox")
 #
 #
 #

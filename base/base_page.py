@@ -3,6 +3,7 @@ from allure_commons.types import AttachmentType
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.common import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
@@ -20,20 +21,21 @@ class BasePage:
             self.driver.get(self.PAGE_URL)
             self.accept_cookies()
 
+    def get_shadow_root(self, element):
+        return self.driver.execute_script('return arguments[0].shadowRoot', element)
+
     def accept_cookies(self):
         try:
-            self.wait.until(
-                EC.visibility_of_element_located(loc.cookies_frame_loc))
-
+            self.wait.until(EC.visibility_of_element_located(loc.shadow_host_loc))
             try:
-                # Wait for the "Accept All Cookies" button to appear and click it
-                accept_cookies_button = self.wait.until(
-                    EC.element_to_be_clickable(loc.accept_all_cookies_btn_loc))
-                accept_cookies_button.click()
-                # Switch back to the default content
-                self.driver.switch_to.default_content()
-            except Exception as e:
-                print("Failed to accept cookies:", e)
+                shadow_host = self.driver.find_element(*loc.shadow_host_loc)
+                accept_all_cookies_button = self.get_shadow_root(shadow_host).find_element(*loc.accept_all_cookies_btn_loc)
+                try:
+                    accept_all_cookies_button.click()
+                except Exception as e:
+                    print("Failed to accept cookies:", e)
+            except NoSuchElementException as e:
+                print("Cannot click on the element:", e)
 
         except TimeoutException:
             print("Frame with cookies did not appear.")
