@@ -29,7 +29,8 @@ class BasePage:
             self.wait.until(EC.visibility_of_element_located(loc.shadow_host_loc))
             try:
                 shadow_host = self.driver.find_element(*loc.shadow_host_loc)
-                accept_all_cookies_button = self.get_shadow_root(shadow_host).find_element(*loc.accept_all_cookies_btn_loc)
+                accept_all_cookies_button = self.get_shadow_root(shadow_host).find_element(
+                    *loc.accept_all_cookies_btn_loc)
                 try:
                     accept_all_cookies_button.click()
                 except Exception as e:
