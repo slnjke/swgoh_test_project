@@ -3,8 +3,6 @@ from config.links import Links
 from selenium.common import NoSuchElementException
 from pages.locators import search_page_locators as loc
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
 import allure
 
 
