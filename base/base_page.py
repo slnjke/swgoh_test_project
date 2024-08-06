@@ -25,19 +25,14 @@ class BasePage:
         return self.driver.execute_script('return arguments[0].shadowRoot', element)
 
     def accept_cookies(self):
+        shadow_host = self.driver.find_element(*loc.shadow_host_loc)
+        shadow_root = self.get_shadow_root(shadow_host).find_element(*loc.accept_all_cookies_btn_loc)
         try:
-            self.wait.until(EC.visibility_of_element_located(loc.shadow_host_loc))
+            self.wait.until(EC.element_to_be_clickable(shadow_root))
             try:
-                shadow_host = self.driver.find_element(*loc.shadow_host_loc)
-                accept_all_cookies_button = self.get_shadow_root(shadow_host).find_element(
-                    *loc.accept_all_cookies_btn_loc)
-                try:
-                    accept_all_cookies_button.click()
-                except Exception as e:
-                    print("Failed to accept cookies:", e)
-            except NoSuchElementException as e:
-                print("Cannot click on the element:", e)
-
+                shadow_root.click()
+            except Exception as e:
+                print("Failed to accept cookies:", e)
         except TimeoutException:
             print("Frame with cookies did not appear.")
 
@@ -71,9 +66,11 @@ class BasePage:
 
     def click_and_open_link_in_new_tab(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        self.take_screenshot("Character page")
         ActionChains(self.driver).key_down(Keys.CONTROL).click(element).key_up(Keys.CONTROL).perform()
 
     def switch_to_new_tab(self, original_tab):
         all_tabs = self.driver.window_handles
         new_tab = next(tab for tab in all_tabs if tab != original_tab)
+        self.take_screenshot("Character page")
         self.driver.switch_to.window(new_tab)
