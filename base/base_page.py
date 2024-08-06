@@ -25,16 +25,19 @@ class BasePage:
         return self.driver.execute_script('return arguments[0].shadowRoot', element)
 
     def accept_cookies(self):
-        shadow_host = self.driver.find_element(*loc.shadow_host_loc)
-        shadow_root = self.get_shadow_root(shadow_host).find_element(*loc.accept_all_cookies_btn_loc)
         try:
-            self.wait.until(EC.element_to_be_clickable(shadow_root))
+            shadow_host = self.driver.find_element(*loc.shadow_host_loc)
+            shadow_root = self.get_shadow_root(shadow_host).find_element(*loc.accept_all_cookies_btn_loc)
             try:
-                shadow_root.click()
-            except Exception as e:
-                print("Failed to accept cookies:", e)
-        except TimeoutException:
-            print("Frame with cookies did not appear.")
+                self.wait.until(EC.element_to_be_clickable(shadow_root))
+                try:
+                    shadow_root.click()
+                except Exception as e:
+                    print("Failed to accept cookies:", e)
+            except TimeoutException:
+                print("Accept all cookies button is not clickable")
+        except Exception as e:
+            print("Frame with cookies didn't appear:", e)
 
     def is_opened(self):
         self.wait.until(EC.url_to_be(self.PAGE_URL))
