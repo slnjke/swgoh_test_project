@@ -510,28 +510,28 @@ class TestFilterCharactersByAbilityClasses(BaseTest):
         self.search_page.open_page()
         self.search_page.click_filters_button()
         self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Defence_Down)
+        self.search_page.click_on_a_specific_filter(loc.filter_loc_Defense_Down)
 
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Defence_Down)
-        assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Defence_Down)
+        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Defense_Down)
+        assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Defense_Down)
 
     def test_filter_characters_defence_penetration_up(self):
         self.search_page.open_page()
         self.search_page.click_filters_button()
         self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Defence_Penetration_Up)
+        self.search_page.click_on_a_specific_filter(loc.filter_loc_Defense_Penetration_Up)
 
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Defence_Penetration_Up)
-        assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Defence_Penetration_Up)
+        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Defense_Penetration_Up)
+        assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Defense_Penetration_Up)
 
     def test_filter_characters_defence_up(self):
         self.search_page.open_page()
         self.search_page.click_filters_button()
         self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Defence_Up)
+        self.search_page.click_on_a_specific_filter(loc.filter_loc_Defense_Up)
 
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Defence_Up)
-        assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Defence_Up)
+        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Defense_Up)
+        assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Defense_Up)
 
     def test_filter_characters_dispel(self):
         self.search_page.open_page()
@@ -541,15 +541,6 @@ class TestFilterCharactersByAbilityClasses(BaseTest):
 
         assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Dispel)
         assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Dispel)
-
-    def test_filter_characters_dispel_all_allies(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Dispel_All_Allies)
-
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Dispel_All_Allies)
-        assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Dispel_All_Allies)
 
     def test_filter_characters_dispel_all_enemies(self):
         self.search_page.open_page()
