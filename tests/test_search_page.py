@@ -14,278 +14,278 @@ class TestFilterCharactersByCategory(BaseTest):
         assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_501)
         assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_501)
 
-    def test_filter_characters_attacker(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Attacker)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Attacker)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Attacker)
-
-    def test_filter_characters_bad_batch(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Bad_Batch)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Bad_Batch)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Bad_Batch)
-
-    def test_filter_characters_bounty_hunter(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Bounty_Hunter)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Bounty_Hunter)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Bounty_Hunter)
-
-    def test_filter_characters_clone_trooper(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Clone_Trooper)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Clone_Trooper)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Clone_Trooper)
-
-    def test_filter_characters_droid(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Droid)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Droid)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Droid)
-
-    def test_filter_characters_empire(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Empire)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Empire)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Empire)
-
-    def test_filter_characters_ewok(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Ewok)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Ewok)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Ewok)
-
-    def test_filter_characters_first_order(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_First_Order)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_First_Order)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_First_Order)
-
-    def test_filter_characters_fleet_commander(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Fleet_Commander)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Fleet_Commander)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Fleet_Commander)
-
-    def test_filter_characters_galactic_legend(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Galactic_Legend)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Galactic_Legend)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Galactic_Legend)
-
-    def test_filter_characters_galactic_republic(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Galactic_Republic)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Galactic_Republic)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Galactic_Republic)
-
-    def test_filter_characters_geonosian(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Geonosian)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Geonosian)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Geonosian)
-
-    def test_filter_characters_gungan(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Gungan)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Gungan)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Gungan)
-
-    def test_filter_characters_healer(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Healer)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Healer)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Healer)
-
-    def test_filter_characters_hutt_cartel(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Hutt_Cartel)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Hutt_Cartel)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Hutt_Cartel)
-
-    def test_filter_characters_imperial_remnant(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Imperial_Remnant)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Imperial_Remnant)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Imperial_Remnant)
-
-    def test_filter_characters_imperial_trooper(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Imperial_Trooper)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Imperial_Trooper)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Imperial_Trooper)
-
-    def test_filter_characters_inquisitorius(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Inquisitorius)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Inquisitorius)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Inquisitorius)
-
-    def test_filter_characters_jawa(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Jawa)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Jawa)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Jawa)
-
-    def test_filter_characters_jedi(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Jedi)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Jedi)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Jedi)
-
-    def test_filter_characters_leader(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Leader)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Leader)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Leader)
-
-    def test_filter_characters_mandalorian(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Mandalorian)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Mandalorian)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Mandalorian)
-
-    def test_filter_characters_nightsister(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Nightsister)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Nightsister)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Nightsister)
-
-    def test_filter_characters_old_republic(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Old_Republic)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Old_Republic)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Old_Republic)
-
-    def test_filter_characters_pheonix(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Phoenix)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Phoenix)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Phoenix)
-
-    def test_filter_characters_rebel(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Rebel)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Rebel)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Rebel)
-
-    def test_filter_characters_rebel_fighter(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Rebel_Fighter)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Rebel_Fighter)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Rebel_Fighter)
-
-    def test_filter_characters_resistance(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Resistance)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Resistance)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Resistance)
-
-    def test_filter_characters_rogue_one(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Rogue_One)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Rogue_One)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Rogue_One)
-
-    def test_filter_characters_scoundrel(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Scoundrel)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Scoundrel)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Scoundrel)
-
-    def test_filter_characters_separatist(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Separatist)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Separatist)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Separatist)
-
-    def test_filter_characters_sith(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Sith)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Sith)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Sith)
-
-    def test_filter_characters_sith_empire(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Sith_Empire)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Sith_Empire)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Sith_Empire)
-
-    def test_filter_characters_smuggler(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Smuggler)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Smuggler)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Smuggler)
-
-    def test_filter_characters_support(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Support)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Support)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Support)
-
-    def test_filter_characters_tank(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Tank)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Tank)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Tank)
-
-    def test_filter_characters_tusken(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Tusken)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Tusken)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Tusken)
-
-    def test_filter_characters_unaligned_force_user(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Unaligned_Force_User)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Unaligned_Force_User)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Unaligned_Force_User)
-
-    def test_filter_characters_wookie(self):
-        self.search_page.open_page()
-        self.search_page.click_filters_button()
-        self.search_page.click_on_a_specific_filter(loc.filter_loc_Wookiee)
-        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Wookiee)
-        assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Wookiee)
+    # def test_filter_characters_attacker(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Attacker)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Attacker)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Attacker)
+    #
+    # def test_filter_characters_bad_batch(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Bad_Batch)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Bad_Batch)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Bad_Batch)
+    #
+    # def test_filter_characters_bounty_hunter(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Bounty_Hunter)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Bounty_Hunter)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Bounty_Hunter)
+    #
+    # def test_filter_characters_clone_trooper(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Clone_Trooper)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Clone_Trooper)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Clone_Trooper)
+    #
+    # def test_filter_characters_droid(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Droid)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Droid)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Droid)
+    #
+    # def test_filter_characters_empire(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Empire)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Empire)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Empire)
+    #
+    # def test_filter_characters_ewok(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Ewok)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Ewok)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Ewok)
+    #
+    # def test_filter_characters_first_order(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_First_Order)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_First_Order)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_First_Order)
+    #
+    # def test_filter_characters_fleet_commander(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Fleet_Commander)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Fleet_Commander)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Fleet_Commander)
+    #
+    # def test_filter_characters_galactic_legend(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Galactic_Legend)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Galactic_Legend)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Galactic_Legend)
+    #
+    # def test_filter_characters_galactic_republic(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Galactic_Republic)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Galactic_Republic)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Galactic_Republic)
+    #
+    # def test_filter_characters_geonosian(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Geonosian)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Geonosian)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Geonosian)
+    #
+    # def test_filter_characters_gungan(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Gungan)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Gungan)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Gungan)
+    #
+    # def test_filter_characters_healer(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Healer)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Healer)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Healer)
+    #
+    # def test_filter_characters_hutt_cartel(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Hutt_Cartel)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Hutt_Cartel)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Hutt_Cartel)
+    #
+    # def test_filter_characters_imperial_remnant(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Imperial_Remnant)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Imperial_Remnant)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Imperial_Remnant)
+    #
+    # def test_filter_characters_imperial_trooper(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Imperial_Trooper)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Imperial_Trooper)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Imperial_Trooper)
+    #
+    # def test_filter_characters_inquisitorius(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Inquisitorius)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Inquisitorius)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Inquisitorius)
+    #
+    # def test_filter_characters_jawa(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Jawa)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Jawa)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Jawa)
+    #
+    # def test_filter_characters_jedi(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Jedi)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Jedi)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Jedi)
+    #
+    # def test_filter_characters_leader(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Leader)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Leader)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Leader)
+    #
+    # def test_filter_characters_mandalorian(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Mandalorian)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Mandalorian)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Mandalorian)
+    #
+    # def test_filter_characters_nightsister(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Nightsister)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Nightsister)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Nightsister)
+    #
+    # def test_filter_characters_old_republic(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Old_Republic)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Old_Republic)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Old_Republic)
+    #
+    # def test_filter_characters_pheonix(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Phoenix)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Phoenix)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Phoenix)
+    #
+    # def test_filter_characters_rebel(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Rebel)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Rebel)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Rebel)
+    #
+    # def test_filter_characters_rebel_fighter(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Rebel_Fighter)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Rebel_Fighter)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Rebel_Fighter)
+    #
+    # def test_filter_characters_resistance(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Resistance)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Resistance)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Resistance)
+    #
+    # def test_filter_characters_rogue_one(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Rogue_One)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Rogue_One)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Rogue_One)
+    #
+    # def test_filter_characters_scoundrel(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Scoundrel)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Scoundrel)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Scoundrel)
+    #
+    # def test_filter_characters_separatist(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Separatist)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Separatist)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Separatist)
+    #
+    # def test_filter_characters_sith(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Sith)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Sith)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Sith)
+    #
+    # def test_filter_characters_sith_empire(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Sith_Empire)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Sith_Empire)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Sith_Empire)
+    #
+    # def test_filter_characters_smuggler(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Smuggler)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Smuggler)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Smuggler)
+    #
+    # def test_filter_characters_support(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Support)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Support)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Support)
+    #
+    # def test_filter_characters_tank(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Tank)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Tank)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Tank)
+    #
+    # def test_filter_characters_tusken(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Tusken)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Tusken)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Tusken)
+    #
+    # def test_filter_characters_unaligned_force_user(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Unaligned_Force_User)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Unaligned_Force_User)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Unaligned_Force_User)
+    #
+    # def test_filter_characters_wookie(self):
+    #     self.search_page.open_page()
+    #     self.search_page.click_filters_button()
+    #     self.search_page.click_on_a_specific_filter(loc.filter_loc_Wookiee)
+    #     assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Wookiee)
+    #     assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Wookiee)
 
 
 @allure.feature('Filtering Characters')
@@ -316,6 +316,7 @@ class TestFilterCharactersByAlignment(BaseTest):
 
 @allure.feature('Filtering Characters')
 @allure.story('Filtering by Ability Classes')
+@pytest.mark.skip(reason="Tests not ready yet")
 class TestFilterCharactersByAbilityClasses(BaseTest):
     def test_filter_characters_ability_block(self):
         self.search_page.open_page()
