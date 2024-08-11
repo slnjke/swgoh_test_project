@@ -69,11 +69,10 @@ class BasePage:
 
     def click_and_open_link_in_new_tab(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
-        self.take_screenshot("Character page")
         ActionChains(self.driver).key_down(Keys.CONTROL).click(element).key_up(Keys.CONTROL).perform()
 
     def switch_to_new_tab(self, original_tab):
         all_tabs = self.driver.window_handles
         new_tab = next(tab for tab in all_tabs if tab != original_tab)
-        self.take_screenshot("Character page")
         self.driver.switch_to.window(new_tab)
+        self.take_screenshot("Character page")
