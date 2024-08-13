@@ -50,12 +50,8 @@ class SearchPage(BasePage):
             for char in chars_filtered:
                 self.click_and_open_link_in_new_tab(char)
                 self.switch_to_new_tab(original_tab)
-                try:
-                    self.find(loc.selected_filter_loc)
-                except NoSuchElementException:
-                    self.take_screenshot("Character page")
-                    return False
-                else:
-                    self.driver.close()
-                    self.driver.switch_to.window(original_tab)
+                self.find(loc.selected_filter_loc)
+                self.driver.close()
+                self.driver.switch_to.window(original_tab)
+
         return True
