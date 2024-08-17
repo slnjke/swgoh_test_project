@@ -1,0 +1,388 @@
+{
+  "uid" : "5d823ec8fab0feec",
+  "name" : "test_filter_characters_ability_block",
+  "fullName" : "tests.test_search_page.TestFilterCharactersByAbilityClasses#test_filter_characters_ability_block",
+  "historyId" : "6b51893147c1236333c3605afdac3ddb",
+  "time" : {
+    "start" : 1723910459316,
+    "stop" : 1723910557831,
+    "duration" : 98515
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nfrom no such window\n  (Session info: headless chrome=112.0.5615.165)",
+  "statusTrace" : "self = <test_search_page.TestFilterCharactersByAbilityClasses object at 0x7f6cffb911c0>\n\n    def test_filter_characters_ability_block(self):\n        self.search_page.open_page()\n        self.search_page.click_filters_button()\n        self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)\n        self.search_page.click_on_a_specific_filter(loc.filter_loc_Ability_Block)\n    \n        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Ability_Block)\n>       assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Ability_Block)\n\ntests/test_search_page.py:328: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/searching_page.py:53: in check_that_filtered_characters_is_valid\n    self.take_screenshot(f\"Character page{char}\")\nbase/base_page.py:67: in take_screenshot\n    body=self.driver.get_screenshot_as_png(),\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:832: in get_screenshot_as_png\n    return b64decode(self.get_screenshot_as_base64().encode(\"ascii\"))\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:843: in get_screenshot_as_base64\n    return self.execute(Command.SCREENSHOT)[\"value\"]\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:347: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f6cffb8c830>\nresponse = {'status': 500, 'value': '{\"value\":{\"error\":\"unknown error\",\"message\":\"unknown error: cannot determine loading status\\\\nfrom no such window\\\\n  (Session info: headless chrome=112.0.5615.165)\",\"stacktrace\":\"\"}}'}\n\n    def check_response(self, response: Dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                import json\n    \n                try:\n                    value = json.loads(value_json)\n                    if len(value) == 1:\n                        value = value[\"value\"]\n                    status = value.get(\"error\", None)\n                    if not status:\n                        status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                        message = value.get(\"value\") or value.get(\"message\")\n                        if not isinstance(message, str):\n                            value = message\n                            message = message.get(\"message\")\n                    else:\n                        message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: Type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nE       from no such window\nE         (Session info: headless chrome=112.0.5615.165)\n\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:229: WebDriverException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "driver",
+    "time" : {
+      "start" : 1723910458829,
+      "stop" : 1723910459315,
+      "duration" : 486
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setup",
+    "time" : {
+      "start" : 1723910459315,
+      "stop" : 1723910459315,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nfrom no such window\n  (Session info: headless chrome=112.0.5615.165)",
+    "statusTrace" : "self = <test_search_page.TestFilterCharactersByAbilityClasses object at 0x7f6cffb911c0>\n\n    def test_filter_characters_ability_block(self):\n        self.search_page.open_page()\n        self.search_page.click_filters_button()\n        self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)\n        self.search_page.click_on_a_specific_filter(loc.filter_loc_Ability_Block)\n    \n        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Ability_Block)\n>       assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Ability_Block)\n\ntests/test_search_page.py:328: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/searching_page.py:53: in check_that_filtered_characters_is_valid\n    self.take_screenshot(f\"Character page{char}\")\nbase/base_page.py:67: in take_screenshot\n    body=self.driver.get_screenshot_as_png(),\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:832: in get_screenshot_as_png\n    return b64decode(self.get_screenshot_as_base64().encode(\"ascii\"))\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:843: in get_screenshot_as_base64\n    return self.execute(Command.SCREENSHOT)[\"value\"]\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:347: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f6cffb8c830>\nresponse = {'status': 500, 'value': '{\"value\":{\"error\":\"unknown error\",\"message\":\"unknown error: cannot determine loading status\\\\nfrom no such window\\\\n  (Session info: headless chrome=112.0.5615.165)\",\"stacktrace\":\"\"}}'}\n\n    def check_response(self, response: Dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                import json\n    \n                try:\n                    value = json.loads(value_json)\n                    if len(value) == 1:\n                        value = value[\"value\"]\n                    status = value.get(\"error\", None)\n                    if not status:\n                        status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                        message = value.get(\"value\") or value.get(\"message\")\n                        if not isinstance(message, str):\n                            value = message\n                            message = message.get(\"message\")\n                    else:\n                        message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: Type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nE       from no such window\nE         (Session info: headless chrome=112.0.5615.165)\n\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:229: WebDriverException",
+    "steps" : [ {
+      "name" : "Open Page https://swgoh.gg/characters/",
+      "time" : {
+        "start" : 1723910459316,
+        "stop" : 1723910473267,
+        "duration" : 13951
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Click on filters button",
+      "time" : {
+        "start" : 1723910473267,
+        "stop" : 1723910473354,
+        "duration" : 87
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Select filter unit-active-filter-tab",
+      "time" : {
+        "start" : 1723910473354,
+        "stop" : 1723910474438,
+        "duration" : 1084
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Select filter 'Ability Block'",
+      "time" : {
+        "start" : 1723910474438,
+        "stop" : 1723910475468,
+        "duration" : 1030
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Checking that filtered characters is valid for filter 'Ability Block'",
+      "time" : {
+        "start" : 1723910475507,
+        "stop" : 1723910557823,
+        "duration" : 82316
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nfrom no such window\n  (Session info: headless chrome=112.0.5615.165)\n\n",
+      "statusTrace" : "  File \"/swgoh_test_project/pages/searching_page.py\", line 53, in check_that_filtered_characters_is_valid\n    self.take_screenshot(f\"Character page{char}\")\n  File \"/swgoh_test_project/base/base_page.py\", line 67, in take_screenshot\n    body=self.driver.get_screenshot_as_png(),\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py\", line 832, in get_screenshot_as_png\n    return b64decode(self.get_screenshot_as_base64().encode(\"ascii\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py\", line 843, in get_screenshot_as_base64\n    return self.execute(Command.SCREENSHOT)[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py\", line 347, in execute\n    self.error_handler.check_response(response)\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py\", line 229, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6b98b39849a1651c",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"22d95a74-674f-4fb0-94d8-265b95944efd\")>",
+        "source" : "6b98b39849a1651c.png",
+        "type" : "image/png",
+        "size" : 281958
+      }, {
+        "uid" : "5435c9e77b3b782",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"0fc29d0a-e70b-4e1d-b80f-85cad6708728\")>",
+        "source" : "5435c9e77b3b782.png",
+        "type" : "image/png",
+        "size" : 282961
+      }, {
+        "uid" : "62e7c03d6212efe9",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"a5d7b646-7aab-4f80-93ef-5128ad5a6cf0\")>",
+        "source" : "62e7c03d6212efe9.png",
+        "type" : "image/png",
+        "size" : 253814
+      }, {
+        "uid" : "cae1c80cfb5d5795",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"011c7198-6dd1-4976-974a-cdc8c8a78e7a\")>",
+        "source" : "cae1c80cfb5d5795.png",
+        "type" : "image/png",
+        "size" : 278819
+      }, {
+        "uid" : "ea6aa80d7ebedd94",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"f2b43b1e-6cc8-463b-8ed7-cf213b1c4184\")>",
+        "source" : "ea6aa80d7ebedd94.png",
+        "type" : "image/png",
+        "size" : 259598
+      }, {
+        "uid" : "a2429a8bdcf2212b",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"a5ff2d37-b9d9-4603-a13d-11b20dafcd83\")>",
+        "source" : "a2429a8bdcf2212b.png",
+        "type" : "image/png",
+        "size" : 284591
+      }, {
+        "uid" : "45c557a6fa6233e2",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"79968dba-5cf3-4c4c-a775-99749ea20b2e\")>",
+        "source" : "45c557a6fa6233e2.png",
+        "type" : "image/png",
+        "size" : 267035
+      }, {
+        "uid" : "2d7d086056c67157",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"13635092-999b-460f-8cc7-1c1c66119f35\")>",
+        "source" : "2d7d086056c67157.png",
+        "type" : "image/png",
+        "size" : 269712
+      }, {
+        "uid" : "c22bbcf9773585e4",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"76a1e398-0c04-4566-a789-737aa4eada54\")>",
+        "source" : "c22bbcf9773585e4.png",
+        "type" : "image/png",
+        "size" : 256742
+      }, {
+        "uid" : "fdeb1b9d910f84d3",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"9907119f-fa16-416d-92e5-5e4eb01feefe\")>",
+        "source" : "fdeb1b9d910f84d3.png",
+        "type" : "image/png",
+        "size" : 266825
+      }, {
+        "uid" : "80cf2f51a7bf3486",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"15340acf-ff83-4ef9-a5be-eb7ae0e35b21\")>",
+        "source" : "80cf2f51a7bf3486.png",
+        "type" : "image/png",
+        "size" : 275495
+      }, {
+        "uid" : "64483d3ff6b6c535",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"c87f65c4-fd31-4dda-b1d1-1f59a69b3526\")>",
+        "source" : "64483d3ff6b6c535.png",
+        "type" : "image/png",
+        "size" : 263990
+      }, {
+        "uid" : "690564cbac510018",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"0ebb1406-6326-4838-b4af-e2868616f666\")>",
+        "source" : "690564cbac510018.png",
+        "type" : "image/png",
+        "size" : 259719
+      }, {
+        "uid" : "b124ccd0f651afda",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"9c203564-b652-4650-9e7d-3c61dc504664\")>",
+        "source" : "b124ccd0f651afda.png",
+        "type" : "image/png",
+        "size" : 256634
+      }, {
+        "uid" : "486c9b2c6c15a11f",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"0a515fb5-e6a0-42cf-8701-f95b7f05f1ba\")>",
+        "source" : "486c9b2c6c15a11f.png",
+        "type" : "image/png",
+        "size" : 265162
+      }, {
+        "uid" : "2efb86ef3eaac87e",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"3aa2f434-ba40-47a8-9cee-ec427fa88fd3\")>",
+        "source" : "2efb86ef3eaac87e.png",
+        "type" : "image/png",
+        "size" : 272749
+      }, {
+        "uid" : "11a286a9a0ed77f3",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"3ce14dea-667d-48b0-a41e-33c5bf5758b4\")>",
+        "source" : "11a286a9a0ed77f3.png",
+        "type" : "image/png",
+        "size" : 282376
+      }, {
+        "uid" : "25fdf625b63166ef",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"810ac707-0be9-4205-b780-61f30a617913\")>",
+        "source" : "25fdf625b63166ef.png",
+        "type" : "image/png",
+        "size" : 278354
+      }, {
+        "uid" : "3ee5c56a554a0bc5",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"4bb8b996-c089-4327-a8c0-9433e58f5bc5\")>",
+        "source" : "3ee5c56a554a0bc5.png",
+        "type" : "image/png",
+        "size" : 290985
+      }, {
+        "uid" : "9c2b4bf292ae465a",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"41dc341b-d1c0-40f1-83d1-738681b9d302\")>",
+        "source" : "9c2b4bf292ae465a.png",
+        "type" : "image/png",
+        "size" : 255185
+      }, {
+        "uid" : "43d3216be0386ffd",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"36c72c5a-63c0-4396-a4ae-bb9249d0c454\")>",
+        "source" : "43d3216be0386ffd.png",
+        "type" : "image/png",
+        "size" : 251981
+      }, {
+        "uid" : "feda3ef7b5f0506c",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"86d6e6e7-4432-4c52-9c60-e0103cceb15d\")>",
+        "source" : "feda3ef7b5f0506c.png",
+        "type" : "image/png",
+        "size" : 271412
+      }, {
+        "uid" : "20040c7d19681e44",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"e3f2007c-de7f-499d-8d46-293c8e3f33d3\")>",
+        "source" : "20040c7d19681e44.png",
+        "type" : "image/png",
+        "size" : 268734
+      }, {
+        "uid" : "8050873ffa1fe4bd",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"d049ea6d-aeb9-4279-aecf-c62743f489bd\")>",
+        "source" : "8050873ffa1fe4bd.png",
+        "type" : "image/png",
+        "size" : 7181
+      }, {
+        "uid" : "ef55208ec141a785",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"111f742d-d8c2-4601-a720-d8edda9245b5\")>",
+        "source" : "ef55208ec141a785.png",
+        "type" : "image/png",
+        "size" : 287973
+      }, {
+        "uid" : "34b6568b5e7992b3",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"2aa2db5e-a05d-4489-b6dd-b055230b9305\")>",
+        "source" : "34b6568b5e7992b3.png",
+        "type" : "image/png",
+        "size" : 257349
+      }, {
+        "uid" : "33b7e3f047ea6cda",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"f68738e1-5c39-41ef-9c89-a8e850b5df70\")>",
+        "source" : "33b7e3f047ea6cda.png",
+        "type" : "image/png",
+        "size" : 262108
+      }, {
+        "uid" : "9a126e70381ad616",
+        "name" : "Character page<selenium.webdriver.remote.webelement.WebElement (session=\"88a9cfa513952a3162ac10f7df638c6a\", element=\"cc883b32-8298-460f-92c9-b332d4fef3a0\")>",
+        "source" : "9a126e70381ad616.png",
+        "type" : "image/png",
+        "size" : 288140
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 28,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "6f42ffe66257c082",
+      "name" : "log",
+      "source" : "6f42ffe66257c082.txt",
+      "type" : "text/plain",
+      "size" : 10054458
+    }, {
+      "uid" : "6142e1ed06bb7ad0",
+      "name" : "stdout",
+      "source" : "6142e1ed06bb7ad0.txt",
+      "type" : "text/plain",
+      "size" : 339
+    }, {
+      "uid" : "169da5c87e738e71",
+      "name" : "stderr",
+      "source" : "169da5c87e738e71.txt",
+      "type" : "text/plain",
+      "size" : 10059837
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 31,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1723910557921,
+      "stop" : 1723910558023,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Filtering Characters"
+  }, {
+    "name" : "story",
+    "value" : "Filtering by Ability Classes"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_search_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestFilterCharactersByAbilityClasses"
+  }, {
+    "name" : "host",
+    "value" : "1a2ab48834d7"
+  }, {
+    "name" : "thread",
+    "value" : "1-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_search_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "5d823ec8fab0feec.json",
+  "parameterValues" : [ ]
+}
