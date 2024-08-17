@@ -1,0 +1,274 @@
+{
+  "uid" : "cdc59605a70d1394",
+  "name" : "test_filter_characters_ability_block",
+  "fullName" : "tests.test_search_page.TestFilterCharactersByAbilityClasses#test_filter_characters_ability_block",
+  "historyId" : "6b51893147c1236333c3605afdac3ddb",
+  "time" : {
+    "start" : 1723908597989,
+    "stop" : 1723908626566,
+    "duration" : 28577
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nfrom no such window\n  (Session info: headless chrome=112.0.5615.165)",
+  "statusTrace" : "self = <test_search_page.TestFilterCharactersByAbilityClasses object at 0x7f7d248850d0>\n\n    def test_filter_characters_ability_block(self):\n        self.search_page.open_page()\n        self.search_page.click_filters_button()\n        self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)\n        self.search_page.click_on_a_specific_filter(loc.filter_loc_Ability_Block)\n    \n        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Ability_Block)\n>       assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Ability_Block)\n\ntests/test_search_page.py:328: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/searching_page.py:53: in check_that_filtered_characters_is_valid\n    self.take_screenshot(\"Character page\")\nbase/base_page.py:67: in take_screenshot\n    body=self.driver.get_screenshot_as_png(),\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:832: in get_screenshot_as_png\n    return b64decode(self.get_screenshot_as_base64().encode(\"ascii\"))\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:843: in get_screenshot_as_base64\n    return self.execute(Command.SCREENSHOT)[\"value\"]\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:347: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f7d264b69f0>\nresponse = {'status': 500, 'value': '{\"value\":{\"error\":\"unknown error\",\"message\":\"unknown error: cannot determine loading status\\\\nfrom no such window\\\\n  (Session info: headless chrome=112.0.5615.165)\",\"stacktrace\":\"\"}}'}\n\n    def check_response(self, response: Dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                import json\n    \n                try:\n                    value = json.loads(value_json)\n                    if len(value) == 1:\n                        value = value[\"value\"]\n                    status = value.get(\"error\", None)\n                    if not status:\n                        status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                        message = value.get(\"value\") or value.get(\"message\")\n                        if not isinstance(message, str):\n                            value = message\n                            message = message.get(\"message\")\n                    else:\n                        message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: Type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nE       from no such window\nE         (Session info: headless chrome=112.0.5615.165)\n\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:229: WebDriverException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1723908597988,
+      "stop" : 1723908597989,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "driver",
+    "time" : {
+      "start" : 1723908597492,
+      "stop" : 1723908597988,
+      "duration" : 496
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nfrom no such window\n  (Session info: headless chrome=112.0.5615.165)",
+    "statusTrace" : "self = <test_search_page.TestFilterCharactersByAbilityClasses object at 0x7f7d248850d0>\n\n    def test_filter_characters_ability_block(self):\n        self.search_page.open_page()\n        self.search_page.click_filters_button()\n        self.search_page.click_on_a_specific_filter(loc.ability_button_filter_loc)\n        self.search_page.click_on_a_specific_filter(loc.filter_loc_Ability_Block)\n    \n        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Ability_Block)\n>       assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Ability_Block)\n\ntests/test_search_page.py:328: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/searching_page.py:53: in check_that_filtered_characters_is_valid\n    self.take_screenshot(\"Character page\")\nbase/base_page.py:67: in take_screenshot\n    body=self.driver.get_screenshot_as_png(),\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:832: in get_screenshot_as_png\n    return b64decode(self.get_screenshot_as_base64().encode(\"ascii\"))\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:843: in get_screenshot_as_base64\n    return self.execute(Command.SCREENSHOT)[\"value\"]\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:347: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f7d264b69f0>\nresponse = {'status': 500, 'value': '{\"value\":{\"error\":\"unknown error\",\"message\":\"unknown error: cannot determine loading status\\\\nfrom no such window\\\\n  (Session info: headless chrome=112.0.5615.165)\",\"stacktrace\":\"\"}}'}\n\n    def check_response(self, response: Dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                import json\n    \n                try:\n                    value = json.loads(value_json)\n                    if len(value) == 1:\n                        value = value[\"value\"]\n                    status = value.get(\"error\", None)\n                    if not status:\n                        status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                        message = value.get(\"value\") or value.get(\"message\")\n                        if not isinstance(message, str):\n                            value = message\n                            message = message.get(\"message\")\n                    else:\n                        message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: Type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nE       from no such window\nE         (Session info: headless chrome=112.0.5615.165)\n\n/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:229: WebDriverException",
+    "steps" : [ {
+      "name" : "Open Page https://swgoh.gg/characters/",
+      "time" : {
+        "start" : 1723908597989,
+        "stop" : 1723908610164,
+        "duration" : 12175
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Click on filters button",
+      "time" : {
+        "start" : 1723908610164,
+        "stop" : 1723908610251,
+        "duration" : 87
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Select filter unit-active-filter-tab",
+      "time" : {
+        "start" : 1723908610251,
+        "stop" : 1723908611327,
+        "duration" : 1076
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Select filter 'Ability Block'",
+      "time" : {
+        "start" : 1723908611327,
+        "stop" : 1723908612236,
+        "duration" : 909
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Checking that filtered characters is valid for filter 'Ability Block'",
+      "time" : {
+        "start" : 1723908612265,
+        "stop" : 1723908626561,
+        "duration" : 14296
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.WebDriverException: Message: unknown error: cannot determine loading status\nfrom no such window\n  (Session info: headless chrome=112.0.5615.165)\n\n",
+      "statusTrace" : "  File \"/swgoh_test_project/pages/searching_page.py\", line 53, in check_that_filtered_characters_is_valid\n    self.take_screenshot(\"Character page\")\n  File \"/swgoh_test_project/base/base_page.py\", line 67, in take_screenshot\n    body=self.driver.get_screenshot_as_png(),\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py\", line 832, in get_screenshot_as_png\n    return b64decode(self.get_screenshot_as_base64().encode(\"ascii\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py\", line 843, in get_screenshot_as_base64\n    return self.execute(Command.SCREENSHOT)[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py\", line 347, in execute\n    self.error_handler.check_response(response)\n  File \"/usr/local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py\", line 229, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "745c578fddd55c76",
+        "name" : "Character page",
+        "source" : "745c578fddd55c76.png",
+        "type" : "image/png",
+        "size" : 281958
+      }, {
+        "uid" : "d6a14240804a47e2",
+        "name" : "Character page",
+        "source" : "d6a14240804a47e2.png",
+        "type" : "image/png",
+        "size" : 282961
+      }, {
+        "uid" : "ae5ffb332ff68d75",
+        "name" : "Character page",
+        "source" : "ae5ffb332ff68d75.png",
+        "type" : "image/png",
+        "size" : 262184
+      }, {
+        "uid" : "e8a6bacd31777a51",
+        "name" : "Character page",
+        "source" : "e8a6bacd31777a51.png",
+        "type" : "image/png",
+        "size" : 288306
+      }, {
+        "uid" : "d773cb542e73b377",
+        "name" : "Character page",
+        "source" : "d773cb542e73b377.png",
+        "type" : "image/png",
+        "size" : 263621
+      }, {
+        "uid" : "4463798ebf92ce2c",
+        "name" : "Character page",
+        "source" : "4463798ebf92ce2c.png",
+        "type" : "image/png",
+        "size" : 287257
+      }, {
+        "uid" : "c852db1f9e5cabcf",
+        "name" : "Character page",
+        "source" : "c852db1f9e5cabcf.png",
+        "type" : "image/png",
+        "size" : 273427
+      }, {
+        "uid" : "bad9b52188e100f4",
+        "name" : "Character page",
+        "source" : "bad9b52188e100f4.png",
+        "type" : "image/png",
+        "size" : 269691
+      }, {
+        "uid" : "2a4e1c52b350f7ec",
+        "name" : "Character page",
+        "source" : "2a4e1c52b350f7ec.png",
+        "type" : "image/png",
+        "size" : 256742
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 9,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "3cd50722df2bcadb",
+      "name" : "log",
+      "source" : "3cd50722df2bcadb.txt",
+      "type" : "text/plain",
+      "size" : 3407593
+    }, {
+      "uid" : "bd01dcd00e9a3b15",
+      "name" : "stdout",
+      "source" : "bd01dcd00e9a3b15.txt",
+      "type" : "text/plain",
+      "size" : 339
+    }, {
+      "uid" : "122f8213ced6ba64",
+      "name" : "stderr",
+      "source" : "122f8213ced6ba64.txt",
+      "type" : "text/plain",
+      "size" : 3409408
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 12,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 5,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1723908626661,
+      "stop" : 1723908626761,
+      "duration" : 100
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Filtering Characters"
+  }, {
+    "name" : "story",
+    "value" : "Filtering by Ability Classes"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_search_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestFilterCharactersByAbilityClasses"
+  }, {
+    "name" : "host",
+    "value" : "0882512a7923"
+  }, {
+    "name" : "thread",
+    "value" : "1-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_search_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "cdc59605a70d1394.json",
+  "parameterValues" : [ ]
+}
