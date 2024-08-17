@@ -78,5 +78,4 @@ class BasePage:
         logging.debug(f"Current window handle: {self.driver.current_window_handle}")
         logging.debug(f"All window handles: {self.driver.window_handles}")
         self.driver.switch_to.window(new_tab)
-        logging.debug(f"Current window handle: {self.driver.current_window_handle}")
         assert self.driver.current_window_handle == new_tab, "Couldn't switch to new tab"

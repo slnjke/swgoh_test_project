@@ -50,7 +50,8 @@ class SearchPage(BasePage):
             for char in chars_filtered:
                 self.click_and_open_link_in_new_tab(char)
                 self.switch_to_new_tab(original_tab)
-                self.find(loc.selected_filter_loc)
+                self.take_screenshot("Character page")
+                self.wait.until(EC.visibility_of_element_located(loc.selected_filter_loc))
                 self.driver.close()
                 self.driver.switch_to.window(original_tab)
 
