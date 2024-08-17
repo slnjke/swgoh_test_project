@@ -1,10 +1,8 @@
 import allure
-import logging
 from allure_commons.types import AttachmentType
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from selenium.common import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
@@ -76,7 +74,4 @@ class BasePage:
     def switch_to_new_tab(self, original_tab):
         all_tabs = self.driver.window_handles
         new_tab = next(tab for tab in all_tabs if tab != original_tab)
-        logging.debug(f"Current window handle: {self.driver.current_window_handle}")
-        logging.debug(f"All window handles: {self.driver.window_handles}")
         self.driver.switch_to.window(new_tab)
-        logging.debug(f"Current window handle: {self.driver.current_window_handle}")
