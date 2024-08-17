@@ -1,10 +1,8 @@
 import allure
 from base.base_page import BasePage
 from config.links import Links
-from selenium.common import NoSuchElementException
 from pages.locators import search_page_locators as loc
 from selenium.webdriver.support import expected_conditions as EC
-from time import sleep
 
 
 class SearchPage(BasePage):
@@ -51,9 +49,6 @@ class SearchPage(BasePage):
             for char in chars_filtered:
                 self.click_and_open_link_in_new_tab(char)
                 self.switch_to_new_tab(original_tab)
-                self.wait.until(
-                    lambda driver: driver.execute_script('return document.readyState') == 'complete'
-                )
                 self.wait.until(EC.visibility_of_element_located(loc.selected_filter_loc))
                 self.driver.close()
                 self.driver.switch_to.window(original_tab)

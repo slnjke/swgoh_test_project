@@ -71,6 +71,7 @@ class BasePage:
     def click_and_open_link_in_new_tab(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
         ActionChains(self.driver).key_down(Keys.CONTROL).click(element).key_up(Keys.CONTROL).perform()
+        self.wait.until(EC.number_of_windows_to_be(2))
 
     def switch_to_new_tab(self, original_tab):
         all_tabs = self.driver.window_handles
@@ -79,4 +80,3 @@ class BasePage:
         logging.debug(f"All window handles: {self.driver.window_handles}")
         self.driver.switch_to.window(new_tab)
         logging.debug(f"Current window handle: {self.driver.current_window_handle}")
-        assert self.driver.current_window_handle == new_tab, "Couldn't switch to new tab"
