@@ -7,8 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
-
-
 class SearchPage(BasePage):
     PAGE_URL = Links.CHARACTERS_PAGE
     list_of_available_filters = None
