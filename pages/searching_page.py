@@ -4,6 +4,7 @@ from base.base_page import BasePage
 from config.links import Links
 from pages.locators import search_page_locators as loc
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 
 class SearchPage(BasePage):
@@ -51,6 +52,7 @@ class SearchPage(BasePage):
                 self.click_and_open_link_in_new_tab(char)
                 self.switch_to_new_tab(original_tab)
                 logging.debug("Checking presence of filter on character page")
+                sleep(1)
                 self.wait.until(EC.presence_of_element_located(locator))
                 self.driver.close()
                 self.driver.switch_to.window(original_tab)
