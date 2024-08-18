@@ -49,7 +49,7 @@ class SearchPage(BasePage):
             for char in chars_filtered:
                 self.click_and_open_link_in_new_tab(char)
                 self.switch_to_new_tab(original_tab)
-                self.find(locator)
+                self.wait.until(EC.presence_of_element_located(locator))
                 self.driver.close()
                 self.driver.switch_to.window(original_tab)
 
