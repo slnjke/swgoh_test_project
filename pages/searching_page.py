@@ -1,4 +1,5 @@
 import allure
+import logging
 from base.base_page import BasePage
 from config.links import Links
 from pages.locators import search_page_locators as loc
@@ -49,6 +50,7 @@ class SearchPage(BasePage):
             for char in chars_filtered:
                 self.click_and_open_link_in_new_tab(char)
                 self.switch_to_new_tab(original_tab)
+                logging.debug("Checking presence of filter on character page")
                 self.wait.until(EC.presence_of_element_located(locator))
                 self.driver.close()
                 self.driver.switch_to.window(original_tab)
