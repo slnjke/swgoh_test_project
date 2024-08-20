@@ -1,0 +1,629 @@
+2024-08-20 19:53:39,533 - selenium.webdriver.common.selenium_manager - DEBUG - Selenium Manager binary found at: /usr/local/lib/python3.12/site-packages/selenium/webdriver/common/linux/selenium-manager
+2024-08-20 19:53:39,533 - selenium.webdriver.common.selenium_manager - DEBUG - Executing process: /usr/local/lib/python3.12/site-packages/selenium/webdriver/common/linux/selenium-manager --browser chrome --debug --language-binding python --output json
+2024-08-20 19:53:39,615 - selenium.webdriver.common.selenium_manager - DEBUG - Found chromedriver 127.0.6533.99 in PATH: /usr/bin/chromedriver
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Found chromium-browser in PATH: /usr/bin/chromium-browser
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Running command: /usr/bin/chromium-browser --version
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Output: "Chromium 127.0.6533.99 Alpine Linux"
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Detected browser: chrome 127.0.6533.99
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Required driver: chromedriver 127.0.6533.119
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Driver path: /usr/bin/chromedriver
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Browser path: /usr/bin/chromium-browser
+2024-08-20 19:53:39,616 - selenium.webdriver.common.selenium_manager - DEBUG - Using driver at: /usr/bin/chromedriver
+2024-08-20 19:53:39,617 - selenium.webdriver.common.service - DEBUG - Started executable: `/usr/bin/chromedriver` in a child process with pid: 90384 using 0 to output -3
+2024-08-20 19:53:39,627 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'browserVersion': None, 'goog:chromeOptions': {'extensions': [], 'binary': '/usr/bin/chromium-browser', 'args': ['--headless', '--no-sandbox', '--disable-dev-shm-usage']}}}}
+2024-08-20 19:53:39,628 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:59623
+2024-08-20 19:53:39,875 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session HTTP/1.1" 200 0
+2024-08-20 19:53:39,875 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome-headless-shell","browserVersion":"127.0.6533.99","chrome":{"chromedriverVersion":"127.0.6533.99 (f31af5097d90ef5ae5bd7b8700199bc6189ba34d-refs/branch-heads/6533@{#1910})","userDataDir":"/tmp/.org.chromium.Chromium.fMlafg"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:37889"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"linux","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"c9922d8f72134217a82790e86fec8de0"}} | headers=HTTPHeaderDict({'Content-Length': '863', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:39,875 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:39,875 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/rect {'x': None, 'y': None, 'width': 1920, 'height': 1080}
+2024-08-20 19:53:39,888 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window/rect HTTP/1.1" 200 0
+2024-08-20 19:53:39,888 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"height":1080,"width":1920,"x":0,"y":0}} | headers=HTTPHeaderDict({'Content-Length': '50', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:39,888 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:39,889 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/timeouts {'implicit': 10000}
+2024-08-20 19:53:39,889 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/timeouts HTTP/1.1" 200 0
+2024-08-20 19:53:39,889 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:39,890 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:39,891 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/url {'url': 'https://swgoh.gg/characters/'}
+2024-08-20 19:53:44,165 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/url HTTP/1.1" 200 0
+2024-08-20 19:53:44,165 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:44,165 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:44,165 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'css selector', 'value': '[id="cmpwrapper"]'}
+2024-08-20 19:53:54,233 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 404 0
+2024-08-20 19:53:54,233 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=404 | data={"value":{"error":"no such element","message":"no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"[id=\"cmpwrapper\"]\"}\n  (Session info: chrome-headless-shell=127.0.6533.99)","stacktrace":""}} | headers=HTTPHeaderDict({'Content-Length': '230', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:54,234 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:54,234 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//button[@class='button h-100  ']"}
+2024-08-20 19:53:54,248 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:53:54,248 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.219"}} | headers=HTTPHeaderDict({'Content-Length': '127', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:54,248 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:54,249 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var k=this||self;function aa(a){return"string...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.219'}]}
+2024-08-20 19:53:54,267 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:53:54,267 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:54,267 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:54,268 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.219/enabled {}
+2024-08-20 19:53:54,282 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.219/enabled HTTP/1.1" 200 0
+2024-08-20 19:53:54,282 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:54,282 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:54,283 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.219/click {}
+2024-08-20 19:53:54,355 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.219/click HTTP/1.1" 200 0
+2024-08-20 19:53:54,355 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:54,355 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:54,356 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'css selector', 'value': '[id="unit-active-filter-tab-ac"]'}
+2024-08-20 19:53:54,413 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:53:54,413 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223"}} | headers=HTTPHeaderDict({'Content-Length': '127', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:54,413 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:54,414 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var k=this||self;function aa(a){return"string...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223'}]}
+2024-08-20 19:53:54,430 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:53:54,430 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":false} | headers=HTTPHeaderDict({'Content-Length': '15', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:54,430 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,430 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'css selector', 'value': '[id="unit-active-filter-tab-ac"]'}
+2024-08-20 19:53:55,440 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:53:55,440 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223"}} | headers=HTTPHeaderDict({'Content-Length': '127', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:55,440 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,441 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var k=this||self;function aa(a){return"string...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223'}]}
+2024-08-20 19:53:55,451 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:53:55,451 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:55,451 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,451 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223/enabled {}
+2024-08-20 19:53:55,460 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223/enabled HTTP/1.1" 200 0
+2024-08-20 19:53:55,460 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:55,460 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,460 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223/click {}
+2024-08-20 19:53:55,526 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.223/click HTTP/1.1" 200 0
+2024-08-20 19:53:55,526 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:55,526 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,526 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:53:55,544 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:53:55,544 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.226"}} | headers=HTTPHeaderDict({'Content-Length': '127', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:55,544 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,544 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var k=this||self;function aa(a){return"string...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.226'}]}
+2024-08-20 19:53:55,555 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:53:55,556 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:55,556 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,556 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.226/enabled {}
+2024-08-20 19:53:55,566 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.226/enabled HTTP/1.1" 200 0
+2024-08-20 19:53:55,566 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:55,566 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:55,566 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.226/click {}
+2024-08-20 19:53:56,188 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.3FABD07E000E43A7A186BF8E34C3FE71.e.226/click HTTP/1.1" 200 0
+2024-08-20 19:53:56,189 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,189 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,189 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': '//div[@class = "fw-bold"]'}
+2024-08-20 19:53:56,200 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:53:56,200 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.264"}} | headers=HTTPHeaderDict({'Content-Length': '127', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,200 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,200 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.264/text {}
+2024-08-20 19:53:56,212 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/element/f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.264/text HTTP/1.1" 200 0
+2024-08-20 19:53:56,212 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"Thermal Detonator"} | headers=HTTPHeaderDict({'Content-Length': '29', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,212 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,212 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/elements {'using': 'xpath', 'value': "//div[@class = 'unit-card-grid__cell js-unit-search__result']"}
+2024-08-20 19:53:56,222 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/elements HTTP/1.1" 200 0
+2024-08-20 19:53:56,222 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":[{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.295"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.296"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.297"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.298"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.299"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.300"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.301"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.302"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.303"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.304"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.305"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.306"},{"element-6066-11e4-a52e-4f735466cecf":"f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.307"}]} | headers=HTTPHeaderDict({'Content-Length': '1545', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,222 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,222 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:53:56,223 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:53:56,223 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"4B9A23C5D23644E615E788B7F6E74649"} | headers=HTTPHeaderDict({'Content-Length': '44', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,223 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,223 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.295'}]}
+2024-08-20 19:53:56,228 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:53:56,228 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,228 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,228 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.295'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:53:56,719 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:53:56,719 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,719 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,719 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:53:56,799 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:53:56,799 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","CD803C9095E302A7C371A940A4BCE1E2"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,800 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,800 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:53:56,801 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:53:56,802 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","CD803C9095E302A7C371A940A4BCE1E2"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,802 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,802 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': 'CD803C9095E302A7C371A940A4BCE1E2'}
+2024-08-20 19:53:56,804 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:53:56,805 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:56,805 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:56,805 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:53:56,805 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:53:58,392 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:53:58,392 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,392 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,392 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:53:58,392 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:53:58,403 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:53:58,403 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.CD803C9095E302A7C371A940A4BCE1E2.d.8F64715D0B9427B4702A81ADE1894A1A.e.75"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,403 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,404 - root - DEBUG - Closing page
+2024-08-20 19:53:58,404 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:53:58,412 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:53:58,413 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,413 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,413 - root - DEBUG - Switching to original tab
+2024-08-20 19:53:58,413 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:53:58,414 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:53:58,414 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,414 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,415 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.296'}]}
+2024-08-20 19:53:58,422 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:53:58,422 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,423 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,423 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.296'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:53:58,737 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:53:58,737 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,737 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,737 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:53:58,778 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:53:58,778 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","72882535B425C9319C81C97B59BB59A9"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,778 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,778 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:53:58,779 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:53:58,779 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","72882535B425C9319C81C97B59BB59A9"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,779 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,780 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '72882535B425C9319C81C97B59BB59A9'}
+2024-08-20 19:53:58,782 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:53:58,782 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:53:58,782 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:53:58,782 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:53:58,782 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:00,161 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:00,161 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,161 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,161 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:00,161 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:00,173 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:00,173 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.72882535B425C9319C81C97B59BB59A9.d.1AA9493633A8A71B61EE8756D2CC70D6.e.71"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,173 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,173 - root - DEBUG - Closing page
+2024-08-20 19:54:00,173 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:00,182 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:00,182 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,182 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,182 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:00,182 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:00,184 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:00,184 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,184 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,184 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.297'}]}
+2024-08-20 19:54:00,189 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:00,189 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,189 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,189 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.297'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:00,462 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:00,462 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,463 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,463 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:00,512 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:00,512 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","4270D74E5D56922BD88E46D679C491E2"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,512 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,512 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:00,514 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:00,514 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","4270D74E5D56922BD88E46D679C491E2"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,514 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,514 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4270D74E5D56922BD88E46D679C491E2'}
+2024-08-20 19:54:00,515 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:00,515 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:00,515 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:00,515 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:00,515 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:01,793 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:01,793 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:01,793 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:01,793 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:01,793 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:01,809 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:01,809 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.4270D74E5D56922BD88E46D679C491E2.d.22B7719B39A176A4D55A3BB2A98F8232.e.52"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:01,809 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:01,809 - root - DEBUG - Closing page
+2024-08-20 19:54:01,809 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:01,819 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:01,819 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:01,819 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:01,819 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:01,820 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:01,821 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:01,821 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:01,821 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:01,821 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.298'}]}
+2024-08-20 19:54:01,827 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:01,827 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:01,827 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:01,827 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.298'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:02,101 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:02,101 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:02,101 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:02,101 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:02,152 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:02,152 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","19EEC85AD1BF3D213925609E43C8A397"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:02,152 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:02,152 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:02,153 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:02,153 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","19EEC85AD1BF3D213925609E43C8A397"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:02,153 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:02,153 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '19EEC85AD1BF3D213925609E43C8A397'}
+2024-08-20 19:54:02,155 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:02,155 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:02,155 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:02,155 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:02,155 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:03,380 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:03,380 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,380 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,380 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:03,381 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:03,392 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:03,392 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.19EEC85AD1BF3D213925609E43C8A397.d.8B98A2B4325EE60CDF3DB2075068F435.e.37"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,392 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,392 - root - DEBUG - Closing page
+2024-08-20 19:54:03,392 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:03,400 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:03,400 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,400 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,400 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:03,400 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:03,402 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:03,402 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,402 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,402 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.299'}]}
+2024-08-20 19:54:03,408 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:03,408 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,408 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,409 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.299'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:03,682 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:03,682 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,682 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,682 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:03,734 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:03,734 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","317B32BE99D6B8B290C80CB731DA2F62"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,735 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,735 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:03,736 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:03,736 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","317B32BE99D6B8B290C80CB731DA2F62"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,736 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,737 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '317B32BE99D6B8B290C80CB731DA2F62'}
+2024-08-20 19:54:03,738 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:03,738 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:03,738 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:03,738 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:03,739 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:05,041 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:05,042 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,042 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,042 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:05,042 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:05,059 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:05,059 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.317B32BE99D6B8B290C80CB731DA2F62.d.BCD6C021E648298664C4DCBFA1BCE661.e.58"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,060 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,060 - root - DEBUG - Closing page
+2024-08-20 19:54:05,060 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:05,073 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:05,074 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,074 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,074 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:05,074 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:05,076 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:05,077 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,077 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,077 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.300'}]}
+2024-08-20 19:54:05,097 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:05,098 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,098 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,098 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.300'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:05,370 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:05,370 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,370 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,370 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:05,422 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:05,422 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","999A7652A2C0A1D53582C31B73AD8FC4"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,422 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,422 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:05,423 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:05,423 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","999A7652A2C0A1D53582C31B73AD8FC4"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,424 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,424 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '999A7652A2C0A1D53582C31B73AD8FC4'}
+2024-08-20 19:54:05,425 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:05,425 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:05,425 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:05,425 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:05,425 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:06,347 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:06,347 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,347 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,348 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:06,348 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:06,361 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:06,362 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.999A7652A2C0A1D53582C31B73AD8FC4.d.6B1644C7CEFD1A88BE8E80C3B5B8C6C5.e.35"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,362 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,362 - root - DEBUG - Closing page
+2024-08-20 19:54:06,362 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:06,368 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:06,368 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,369 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,369 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:06,369 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:06,371 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:06,371 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,371 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,371 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.301'}]}
+2024-08-20 19:54:06,377 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:06,377 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,377 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,378 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.301'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:06,658 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:06,658 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,658 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,658 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:06,715 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:06,716 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","EEBAF648EEE6D6269DB2FEBEA1EF1863"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,716 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,716 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:06,717 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:06,717 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","EEBAF648EEE6D6269DB2FEBEA1EF1863"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,717 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,717 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': 'EEBAF648EEE6D6269DB2FEBEA1EF1863'}
+2024-08-20 19:54:06,718 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:06,718 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:06,719 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:06,719 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:06,719 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:08,003 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:08,003 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,003 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,003 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:08,003 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:08,014 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:08,014 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.EEBAF648EEE6D6269DB2FEBEA1EF1863.d.47562CC2638D071F649AB00CBD86E1F3.e.58"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,014 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,015 - root - DEBUG - Closing page
+2024-08-20 19:54:08,015 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:08,025 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:08,025 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,025 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,025 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:08,025 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:08,027 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:08,027 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,027 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,027 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.302'}]}
+2024-08-20 19:54:08,033 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:08,033 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,033 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,033 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.302'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:08,307 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:08,307 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,307 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,307 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:08,357 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:08,357 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","D4F03276D3DD41C2A968A2387F42D8F3"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,357 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,357 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:08,358 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:08,358 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","D4F03276D3DD41C2A968A2387F42D8F3"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,358 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,358 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': 'D4F03276D3DD41C2A968A2387F42D8F3'}
+2024-08-20 19:54:08,360 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:08,360 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:08,360 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:08,360 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:08,360 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:09,665 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:09,665 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:09,665 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:09,665 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:09,665 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:09,677 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:09,677 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.D4F03276D3DD41C2A968A2387F42D8F3.d.8641CC97D2695EEF7AEC1B16893DF2AC.e.60"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:09,677 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:09,677 - root - DEBUG - Closing page
+2024-08-20 19:54:09,677 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:09,687 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:09,687 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:09,687 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:09,688 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:09,688 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:09,689 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:09,689 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:09,689 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:09,689 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.303'}]}
+2024-08-20 19:54:09,695 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:09,695 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:09,695 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:09,695 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.303'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:09,968 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:09,968 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:09,968 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:09,968 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:10,028 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:10,028 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","969C27BA301CBD106B685E1D37F08D57"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,028 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,028 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:10,030 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:10,030 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","969C27BA301CBD106B685E1D37F08D57"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,030 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,030 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '969C27BA301CBD106B685E1D37F08D57'}
+2024-08-20 19:54:10,032 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:10,032 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,032 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,032 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:10,032 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:10,931 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:10,931 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,931 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,932 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:10,932 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:10,943 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:10,943 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.969C27BA301CBD106B685E1D37F08D57.d.919E052EB550B0A0A209F0F6E7D47BAE.e.35"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,943 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,944 - root - DEBUG - Closing page
+2024-08-20 19:54:10,944 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:10,953 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:10,953 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,953 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,953 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:10,953 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:10,955 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:10,955 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,955 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,955 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.304'}]}
+2024-08-20 19:54:10,961 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:10,961 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:10,961 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:10,962 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.304'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:11,234 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:11,234 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:11,235 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:11,235 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:11,283 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:11,283 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","EE1107B4A7294520B379DBE11E132D4B"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:11,284 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:11,284 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:11,285 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:11,285 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","EE1107B4A7294520B379DBE11E132D4B"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:11,285 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:11,285 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': 'EE1107B4A7294520B379DBE11E132D4B'}
+2024-08-20 19:54:11,286 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:11,286 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:11,286 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:11,286 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:11,286 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:12,532 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:12,533 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,533 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,533 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:12,533 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:12,544 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:12,544 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.EE1107B4A7294520B379DBE11E132D4B.d.340ED9821B679D63A1316E61D4BD13EE.e.42"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,544 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,544 - root - DEBUG - Closing page
+2024-08-20 19:54:12,545 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:12,553 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:12,553 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,554 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,554 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:12,554 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:12,555 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:12,556 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,556 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,556 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.305'}]}
+2024-08-20 19:54:12,561 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:12,561 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,561 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,562 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.305'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:12,834 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:12,834 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,834 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,834 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:12,885 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:12,885 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","843F1F2EECC8596B9CAC82A5DD829E38"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,885 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,885 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:12,886 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:12,886 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","843F1F2EECC8596B9CAC82A5DD829E38"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,886 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,886 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '843F1F2EECC8596B9CAC82A5DD829E38'}
+2024-08-20 19:54:12,888 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:12,888 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:12,888 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:12,888 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:12,888 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:14,267 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:14,267 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,267 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,267 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:14,267 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:14,282 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:14,282 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.843F1F2EECC8596B9CAC82A5DD829E38.d.016D801433E46792F6128E4B17A2DF8B.e.56"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,282 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,282 - root - DEBUG - Closing page
+2024-08-20 19:54:14,283 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:14,291 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:14,291 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,291 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,291 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:14,291 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:14,293 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:14,293 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,293 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,293 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.306'}]}
+2024-08-20 19:54:14,298 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:14,298 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,298 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,299 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.306'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:14,570 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:14,570 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,570 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,570 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:14,623 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:14,623 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","447790C39A011E82FD43DD4345B80DD8"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,623 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,624 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:14,624 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:14,625 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","447790C39A011E82FD43DD4345B80DD8"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,625 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,625 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '447790C39A011E82FD43DD4345B80DD8'}
+2024-08-20 19:54:14,626 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:14,626 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:14,626 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:14,626 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:14,627 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:15,881 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:15,882 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:15,882 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:15,882 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:15,882 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:15,892 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:15,893 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.447790C39A011E82FD43DD4345B80DD8.d.F97DC5F76E499A56B0B867076DF1E7F4.e.32"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:15,893 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:15,893 - root - DEBUG - Closing page
+2024-08-20 19:54:15,893 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:15,903 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:15,903 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:15,904 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:15,904 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:15,904 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:15,905 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:15,905 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:15,905 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:15,906 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'arguments[0].scrollIntoView();', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.307'}]}
+2024-08-20 19:54:15,911 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:15,911 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:15,911 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:15,911 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/actions {'actions': [{'type': 'pointer', 'parameters': {'pointerType': 'mouse'}, 'id': 'mouse', 'actions': [{'type': 'pause', 'duration': 0}, {'type': 'pointerMove', 'duration': 250, 'x': 0, 'y': 0, 'origin': {'element-6066-11e4-a52e-4f735466cecf': 'f.4B9A23C5D23644E615E788B7F6E74649.d.E014B975D3FDDF4D6D29AD85B6EDDBE4.e.307'}}, {'type': 'pointerDown', 'duration': 0, 'button': 0}, {'type': 'pointerUp', 'duration': 0, 'button': 0}, {'type': 'pause', 'duration': 0}]}, {'type': 'key', 'id': 'key', 'actions': [{'type': 'keyDown', 'value': '\ue009'}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'pause', 'duration': 0}, {'type': 'keyUp', 'value': '\ue009'}]}]}
+2024-08-20 19:54:16,185 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/actions HTTP/1.1" 200 0
+2024-08-20 19:54:16,186 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:16,186 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:16,186 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:16,236 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:16,236 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","2A76CF70E97926624E3D430EF404EC9B"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:16,236 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:16,237 - selenium.webdriver.remote.remote_connection - DEBUG - GET http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window/handles {}
+2024-08-20 19:54:16,238 - urllib3.connectionpool - DEBUG - http://localhost:59623 "GET /session/c9922d8f72134217a82790e86fec8de0/window/handles HTTP/1.1" 200 0
+2024-08-20 19:54:16,238 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649","2A76CF70E97926624E3D430EF404EC9B"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:16,238 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:16,238 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '2A76CF70E97926624E3D430EF404EC9B'}
+2024-08-20 19:54:16,239 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:16,239 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:16,239 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:16,239 - root - DEBUG - Checking that page is loaded
+2024-08-20 19:54:16,240 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/execute/sync {'script': 'return document.readyState', 'args': []}
+2024-08-20 19:54:17,224 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/execute/sync HTTP/1.1" 200 0
+2024-08-20 19:54:17,224 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":"complete"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:17,225 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:17,225 - root - DEBUG - Checking that element is present on page
+2024-08-20 19:54:17,225 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/element {'using': 'xpath', 'value': "//a[normalize-space(text()) ='Thermal Detonator']"}
+2024-08-20 19:54:17,240 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/element HTTP/1.1" 200 0
+2024-08-20 19:54:17,240 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.2A76CF70E97926624E3D430EF404EC9B.d.EE0655C53A30256B05090C8EBC2811C4.e.73"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:17,240 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:17,240 - root - DEBUG - Closing page
+2024-08-20 19:54:17,240 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {}
+2024-08-20 19:54:17,247 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:17,247 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":["4B9A23C5D23644E615E788B7F6E74649"]} | headers=HTTPHeaderDict({'Content-Length': '46', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:17,247 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:17,247 - root - DEBUG - Switching to original tab
+2024-08-20 19:54:17,247 - selenium.webdriver.remote.remote_connection - DEBUG - POST http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0/window {'handle': '4B9A23C5D23644E615E788B7F6E74649'}
+2024-08-20 19:54:17,249 - urllib3.connectionpool - DEBUG - http://localhost:59623 "POST /session/c9922d8f72134217a82790e86fec8de0/window HTTP/1.1" 200 0
+2024-08-20 19:54:17,249 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:17,249 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
+2024-08-20 19:54:17,251 - selenium.webdriver.remote.remote_connection - DEBUG - DELETE http://localhost:59623/session/c9922d8f72134217a82790e86fec8de0 {}
+2024-08-20 19:54:17,302 - urllib3.connectionpool - DEBUG - http://localhost:59623 "DELETE /session/c9922d8f72134217a82790e86fec8de0 HTTP/1.1" 200 0
+2024-08-20 19:54:17,303 - selenium.webdriver.remote.remote_connection - DEBUG - Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-20 19:54:17,303 - selenium.webdriver.remote.remote_connection - DEBUG - Finished Request
