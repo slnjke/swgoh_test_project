@@ -20,10 +20,11 @@ class SearchPage(BasePage):
             self.wait.until(EC.element_to_be_clickable(locator)).click()
 
     def check_that_selected_filter_is_correct(self, locator):
-        filter_to_select = locator[1].strip('//a[normalize-space(text()) =]')
-        selected_filter = self.find(loc.selected_filter_loc).text
+        with allure.step(f"Checking that selected filter is {locator[1].strip('//a[normalize-space(text()) =]')}"):
+            filter_to_select = locator[1].strip('//a[normalize-space(text()) =]')
+            selected_filter = self.find(loc.selected_filter_loc).text
 
-        return True if selected_filter in filter_to_select else False
+            return True if selected_filter in filter_to_select else False
 
     def check_filtered_characters_is_valid(self, locator):
         with allure.step(
@@ -50,15 +51,11 @@ class SearchPage(BasePage):
             for char in chars_filtered:
                 self.click_and_open_link_in_new_tab(char)
                 self.switch_to_new_tab(original_tab)
-                logging.debug("Checking that page is loaded")
                 self.wait.until(
                     lambda driver: driver.execute_script('return document.readyState') == 'complete'
                 )
-                logging.debug("Checking that element is present on page")
                 self.wait.until(EC.presence_of_element_located(locator))
-                logging.debug("Closing page")
                 self.driver.close()
-                logging.debug("Switching to original tab")
                 self.driver.switch_to.window(original_tab)
 
         return True
