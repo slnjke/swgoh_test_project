@@ -1000,3 +1000,34 @@ class TestFilterCharactersByAbilityClasses(BaseTest):
 
         assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_Vulnerable)
         assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Vulnerable)
+
+
+@allure.feature('Filtering Characters')
+@allure.story('Filtering by Raids')
+class TestFilerCharactersByRaids(BaseTest):
+    def test_filter_characters_battle_for_naboo(self):
+        self.search_page.open_page()
+        self.search_page.click_filters_button()
+        self.search_page.click_on_a_specific_filter(loc.raids_button_filter_loc)
+        self.search_page.click_on_a_specific_filter(loc.filter_loc_battle_for_naboo)
+
+        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_battle_for_naboo)
+        assert self.search_page.check_that_filtered_characters_is_valid(loc.battle_for_naboo_raid_category)
+
+    def test_filter_characters_spider_bike_pursuit(self):
+        self.search_page.open_page()
+        self.search_page.click_filters_button()
+        self.search_page.click_on_a_specific_filter(loc.raids_button_filter_loc)
+        self.search_page.click_on_a_specific_filter(loc.filter_loc_spider_bike_raid)
+
+        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_spider_bike_raid)
+        assert self.search_page.check_that_filtered_characters_is_valid(loc.spider_bike_raid_hidden_category)
+
+    def test_filter_characters_krayt_dragon_hunt(self):
+        self.search_page.open_page()
+        self.search_page.click_filters_button()
+        self.search_page.click_on_a_specific_filter(loc.raids_button_filter_loc)
+        self.search_page.click_on_a_specific_filter(loc.filter_loc_krayt_dragon_raid)
+
+        assert self.search_page.check_that_selected_filter_is_correct(loc.filter_loc_krayt_dragon_raid)
+        assert self.search_page.check_that_filtered_characters_is_valid(loc.krayt_dragon_raid_hidden_category)

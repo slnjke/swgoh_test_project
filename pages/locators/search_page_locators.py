@@ -12,7 +12,8 @@ filter_list_loc = ("xpath", "//div[@class='modal-content']/div[@class='modal-bod
                             "/div[@class = 'tab-pane active show']"
                             "/a[@class = 'link-no-style d-block py-2']")
 ability_button_filter_loc = ("id", "unit-active-filter-tab-ac")
-alignments_button_filter_loc = ("xpath", "//a[text()='Alignments']")
+alignments_button_filter_loc = ("id", "unit-active-filter-tab-alignment")
+raids_button_filter_loc = ("id", "unit-active-filter-tab-raid")
 names_of_filtered_chars_loc = ("xpath", "//div[@class = 'unit-card__name']")
 filtered_characters_loc = ("xpath", "//div[@class = 'unit-card-grid__cell js-unit-search__result']")
 #
@@ -142,6 +143,15 @@ filter_loc_Tenacity_Up = ("xpath", "//a[normalize-space(text()) ='Tenacity Up']"
 filter_loc_Thermal_Detonator = ("xpath", "//a[normalize-space(text()) ='Thermal Detonator']")
 filter_loc_Torture = ("xpath", "//a[normalize-space(text()) ='Torture']")
 filter_loc_Vulnerable = ("xpath", "//a[normalize-space(text()) ='Vulnerable']")
+#
+#
+#
+filter_loc_battle_for_naboo = ("xpath", "//a[normalize-space(text()) = 'Battle For Naboo']")
+filter_loc_spider_bike_raid = ("xpath", "//a[normalize-space(text()) = 'Speeder Bike Pursuit']")
+filter_loc_krayt_dragon_raid = ("xpath", "//a[normalize-space(text()) = 'Krayt Dragon Hunt']")
+spider_bike_raid_hidden_category = ("xpath", "//a[normalize-space(text()) = 'raid_speeder_bike_allowed']")
+krayt_dragon_raid_hidden_category = ("xpath", "//a[normalize-space(text()) = 'raid_krayt_dragon_allowed']")
+battle_for_naboo_raid_category = ("xpath", "//a[normalize-space(text()) = 'Battle for Naboo']")
 #
 #
 #
