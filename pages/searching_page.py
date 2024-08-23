@@ -1,5 +1,4 @@
 import allure
-import logging
 from base.base_page import BasePage
 from config.links import Links
 from pages.locators import search_page_locators as loc
