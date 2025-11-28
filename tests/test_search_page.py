@@ -4,8 +4,8 @@ from base.base_test import BaseTest
 from pages.locators import search_page_locators as loc
 
 
-@allure.feature('Filtering Characters')
-@allure.story('Filtering by category')
+@allure.parent_suite('Filtering Characters')
+@allure.suite('Filtering by category')
 class TestFilterCharactersByCategory(BaseTest):
     def test_filter_characters_501(self):
         self.search_page.open_page()
@@ -288,8 +288,8 @@ class TestFilterCharactersByCategory(BaseTest):
         assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Wookiee)
 
 
-@allure.feature('Filtering Characters')
-@allure.story('Filtering by alignment')
+@allure.parent_suite('Filtering Characters')
+@allure.suite('Filtering by alignment')
 @pytest.mark.skip(reason="Functional to be tested not ready yet")
 class TestFilterCharactersByAlignment(BaseTest):
     def test_filter_characters_light_side(self):
@@ -314,8 +314,8 @@ class TestFilterCharactersByAlignment(BaseTest):
         assert self.search_page.check_filtered_characters_is_valid(loc.filter_loc_Neutral)
 
 
-@allure.feature('Filtering Characters')
-@allure.story('Filtering by Ability Classes')
+@allure.parent_suite('Filtering Characters')
+@allure.suite('Filtering by Ability Classes')
 class TestFilterCharactersByAbilityClasses(BaseTest):
     def test_filter_characters_ability_block(self):
         self.search_page.open_page()
@@ -1002,8 +1002,8 @@ class TestFilterCharactersByAbilityClasses(BaseTest):
         assert self.search_page.check_that_filtered_characters_is_valid(loc.filter_loc_Vulnerable)
 
 
-@allure.feature('Filtering Characters')
-@allure.story('Filtering by Raids')
+@allure.parent_suite('Filtering Characters')
+@allure.suite('Filtering by Raids')
 class TestFilerCharactersByRaids(BaseTest):
     def test_filter_characters_battle_for_naboo(self):
         self.search_page.open_page()
