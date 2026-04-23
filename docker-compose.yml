@@ -1,12 +1,12 @@
-version: '3.7'
-
 services:
   regression:
-    image: python:3.9-alpine3.18-pytest
+    image: ui_tests
+    container_name: ui_tests
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
     - ./:/swgoh_test_project
-    command: /bin/sh -c "ls -la && pytest tests/test_search_page.py --alluredir=allure-results"
+    command: python3
     working_dir: /swgoh_test_project/

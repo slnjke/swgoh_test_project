@@ -1,0 +1,14 @@
+[project]
+name = "swgoh_test_project"
+version = "0.1.0"
+description = "UI tests for swgoh.gg using Selenium and pytest"
+requires-python = ">=3.12"
+dependencies = [
+    "allure-pytest==2.13.5",
+    "pytest==8.3.4",
+    "selenium==4.27.1",
+]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
