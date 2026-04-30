@@ -34,10 +34,10 @@ docker-build: .env
 	docker-compose build regression;
 
 test: venv												## Локальный запуск тестов
-	uv run pytest $(OPTIONS) --alluredir=./allure-results --json-report --json-report-file=logs/results.json --junitxml=test-results.xml
+	uv run pytest $(OPTIONS) --alluredir=./allure-results
 
 local-test: install                           ## Локальный запуск тестов c поднятием контейнеров
-	uv run pytest $(OPTIONS) --alluredir=./allure-results --json-report --json-report-file=logs/results.json --junitxml=test-results.xml
+	uv run pytest $(OPTIONS) --alluredir=./allure-results
 
 docker-test: .env dirs docker-build up                                                ## Запуск всех тестов с докера
 	$(COMPOSE) exec -T tests make test OPTIONS="$(OPTIONS)"
